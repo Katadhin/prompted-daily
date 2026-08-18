@@ -6,7 +6,7 @@
 <title>Prompted.daily — Don't just read the news. Engage with it.</title>
 <meta name="description" content="Analytical essays paired with the engineered prompt that produced them. Read the argument, then run it yourself." />
 
-<link rel="canonical" href="https://prompted.daily/" />
+<link rel="canonical" href="https://prompteddaily.com/" />
 
 <!-- Open Graph / multichannel share cards -->
 <meta property="og:type" content="website" />
@@ -14,8 +14,8 @@
 <meta property="og:description" content="Don't just read the news. Engage with it. Essays paired with the prompt that produced them." />
 <meta property="og:site_name" content="Prompted.daily" />
 <!-- TODO: set canonical URL + a share image once the domain is live -->
-<!-- <meta property="og:url" content="https://prompted.daily/" /> -->
-<!-- <meta property="og:image" content="https://prompted.daily/share.png" /> -->
+<!-- <meta property="og:url" content="https://prompteddaily.com/" /> -->
+<!-- <meta property="og:image" content="https://prompteddaily.com/share.png" /> -->
 <meta name="twitter:card" content="summary_large_image" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -189,9 +189,14 @@
   .card{
     border:1px solid var(--hairline); border-radius:5px; padding:24px 22px;
     background:var(--navy); transition:border-color .2s ease, transform .2s ease;
-    display:flex; flex-direction:column; min-height:200px;
+    display:flex; flex-direction:column; min-height:200px; overflow:hidden;
   }
   .card:hover{ border-color:rgba(232,163,61,.5); transform:translateY(-2px); }
+  .card-thumb{
+    display:block; width:calc(100% + 44px); margin:-24px -22px 18px;
+    aspect-ratio:16/9; object-fit:cover; background:var(--navy-deep);
+    border-bottom:1px solid var(--hairline);
+  }
   .card .kicker{ font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--amber); }
   .card h3{ font-family:var(--serif); font-weight:600; font-size:20px; line-height:1.2; margin:12px 0 10px; }
   .card p{ font-size:14.5px; color:var(--ivory-dim); margin:0 0 auto; line-height:1.5; }
@@ -355,6 +360,7 @@ Rules:
         </a>
 
         <a class="card reveal" href="/the-conversation-was-compounding/">
+          <img class="card-thumb" src="/img/conversation.jpg" alt="Aerial blue-grey view of a Catawba County valley with a data center, a textile mill, and amber data lines." />
           <span class="kicker">Regional · Method</span>
           <h3>The Conversation Was Compounding</h3>
           <p>Thinking through a county's industrial future in public, and the AI conversation pattern that produced the analysis. The piece that started the method.</p>
@@ -400,7 +406,7 @@ Rules:
         <div class="author-txt">
           <p class="author-name">John Andrews</p>
           <p class="author-line">Writes Prompted.daily. Teaches at Lenoir-Rhyne University in Hickory, North Carolina, and co-founded Katadhin. Built Collective Bias and Walmart's Eleven Moms before this, both by experimenting in public and reading the result off the response. Lives in Catawba County. Everything here is free.</p>
-          <p class="author-links"><a href="https://katadhin.medium.com" target="_blank" rel="noopener">Medium</a> · <a href="#" target="_blank" rel="noopener">LinkedIn</a> · <a href="#" target="_blank" rel="noopener">Facebook</a></p>
+          <p class="author-links"><a href="https://katadhin.medium.com" target="_blank" rel="noopener">Medium</a> · <a href="https://x.com/prompteddaily" target="_blank" rel="noopener">X</a></p>
         </div>
       </div>
     </div>
@@ -414,9 +420,7 @@ Rules:
       <a href="#top" class="wordmark" style="font-size:18px;">Prompted<span class="dot">.</span><span class="daily">daily</span></a>
       <div class="foot-links">
         <a href="https://katadhin.medium.com" target="_blank" rel="noopener">Medium</a>
-        <!-- TODO: replace # with your real profile URLs -->
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://x.com/prompteddaily" target="_blank" rel="noopener">X</a>
       </div>
     </div>
     <p class="foot-fine">© <span id="yr"></span> Prompted.daily · A Katadhin project · Built to be read slowly.</p>

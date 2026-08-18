@@ -11,13 +11,13 @@ pattern as Throttle & Rust. Everything is in `index.html`.
 3. Repo → **Settings → Pages** → Source: *Deploy from a branch* → Branch: `main` / `/root` → Save.
 4. Live at `https://<user>.github.io/prompted-daily/` within a minute or two.
 
-## Custom domain (prompted.daily)
+## Custom domain (prompteddaily.com)
 
-1. Keep the `CNAME` file in the repo root (it contains `prompted.daily`).
+1. Keep the `CNAME` file in the repo root (it contains `prompteddaily.com`).
 2. At your DNS registrar, point the domain at GitHub Pages:
-   - Apex `prompted.daily` → four A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - Apex `prompteddaily.com` → four A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `www` → CNAME to `<user>.github.io`
-3. Settings → Pages → enter `prompted.daily`, check **Enforce HTTPS** once the cert issues.
+3. Settings → Pages → enter `prompteddaily.com`, check **Enforce HTTPS** once the cert issues.
    *(Confirm current GitHub Pages IPs in their docs before you set DNS — they change rarely but do change.)*
 
 ## Two wire-ups before it's fully live

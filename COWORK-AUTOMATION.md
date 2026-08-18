@@ -39,7 +39,7 @@ Save as a Cowork task. Trigger it yourself; do **not** `/schedule` it.
 > 2. Replace title, kicker, dek, date, byline, essay body, and prompt block(s). Put each
 >    prompt in its own copy-block card. Preserve house voice in any copy you write: no "I"
 >    openers, minimal em-dashes, active prose, specific over general.
-> 3. Set the page `<link rel="canonical">` to `https://prompted.daily/<slug>/`.
+> 3. Set the page `<link rel="canonical">` to `https://prompteddaily.com/<slug>/`.
 > 4. On `index.html`, add a card to the `.cards` grid: kicker, title, a one-line blurb,
 >    `href="/<slug>/"`, CTA "Read + run the prompt". Draft the blurb but FLAG it — the
 >    blurb is my voice to approve, not yours to finalize.
@@ -56,7 +56,7 @@ Save as a Cowork task, then `/schedule` for Monday 08:00.
 
 > **Standing instructions:**
 > Audit the live site. Change no files.
-> 1. Fetch `https://prompted.daily/` and every `/<slug>/` article page.
+> 1. Fetch `https://prompteddaily.com/` and every `/<slug>/` article page.
 > 2. Confirm each returns 200 and its canonical resolves to itself.
 > 3. List every homepage card still pointing to `medium.com` — migration candidates.
 > 4. Flag broken links, and any article missing its prompt copy-block.
