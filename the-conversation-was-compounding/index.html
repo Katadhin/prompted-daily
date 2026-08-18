@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Conversation Was Compounding — Prompted.daily</title>
+<meta name="description" content="What happened when I sat down to think clearly about my county's industrial future — and the AI conversation pattern that produced an answer." />
+
+<!-- Canonical points HERE: the site is the original, Medium is the syndicated copy. -->
+<link rel="canonical" href="https://prompted.daily/the-conversation-was-compounding/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Conversation Was Compounding" />
+<meta property="og:description" content="Thinking clearly about a county's industrial future — and the AI conversation pattern that produced an answer." />
+<meta property="og:site_name" content="Prompted.daily" />
+<meta property="og:url" content="https://prompted.daily/the-conversation-was-compounding/" />
+<meta property="og:image" content="https://prompted.daily/the-conversation-was-compounding/header.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23E8A33D'/%3E%3C/svg%3E" />
+
+<style>
+  :root{
+    --navy:#16162b; --navy-deep:#101024;
+    --ivory:#ECE6D8; --ivory-soft:#E6E0D2; --ivory-dim:#8f8fa6;
+    --amber:#E8A33D; --hairline:rgba(236,230,216,.10); --hairline-2:rgba(236,230,216,.06);
+    --serif:"Fraunces",Georgia,serif;
+    --read:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; color:var(--ivory);
+    background:radial-gradient(120% 70% at 50% -8%, #1c1c38 0%, var(--navy) 46%, var(--navy-deep) 100%);
+    background-attachment:fixed;
+    font-family:var(--read); font-size:19px; line-height:1.72;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{ color:inherit; }
+  .wrap{ width:100%; max-width:720px; margin:0 auto; padding:0 26px; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); }
+
+  /* nav */
+  header.nav{ position:sticky; top:0; z-index:50; background:rgba(16,16,36,.72);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--hairline-2); }
+  .nav-inner{ width:100%; max-width:1080px; margin:0 auto; padding:0 26px; height:64px;
+    display:flex; align-items:center; justify-content:space-between; }
+  .wordmark{ font-family:var(--serif); font-weight:900; font-size:21px; color:var(--ivory);
+    display:inline-flex; align-items:baseline; letter-spacing:-.01em; }
+  .wordmark .dot{ color:var(--amber); } .wordmark .daily{ font-weight:600; }
+  .back{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .back:hover{ color:var(--ivory); }
+  .back::before{ content:"← "; color:var(--amber); }
+
+  /* article head */
+  article{ padding:70px 0 40px; }
+  .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); }
+  h1{ font-family:var(--serif); font-weight:900; font-size:clamp(34px,5.4vw,54px); line-height:1.05;
+    letter-spacing:-.02em; margin:16px 0 0; }
+  .dek{ font-family:var(--read); font-style:italic; font-size:20px; color:var(--ivory-soft);
+    margin:20px 0 0; line-height:1.5; }
+  .byline{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); margin:26px 0 0;
+    display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .byline .amber{ color:var(--amber); }
+  .rule{ height:1px; background:var(--hairline); margin:34px 0 6px; }
+  .hero-img{ width:100%; display:block; border-radius:6px; border:1px solid var(--hairline); margin:30px 0 0; }
+  .hero-cap{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); line-height:1.5; margin:10px 0 0; }
+
+  .body > p{ margin:24px 0; }
+  .body h2{ font-family:var(--serif); font-weight:600; font-size:clamp(23px,3.4vw,30px);
+    letter-spacing:-.01em; margin:52px 0 8px; line-height:1.15; }
+  .body em{ font-style:italic; color:var(--ivory-soft); }
+  .body strong{ font-weight:600; color:var(--ivory); }
+
+  blockquote{ margin:34px 0; padding:4px 0 4px 24px; border-left:2px solid var(--amber);
+    font-family:var(--serif); font-weight:600; font-size:22px; line-height:1.4; color:var(--ivory); font-style:normal; }
+  blockquote.plain{ font-family:var(--read); font-weight:500; font-style:italic; font-size:20px; color:var(--ivory-soft); }
+
+  /* prompt section — the signature unit */
+  .prompt-wrap{ margin:56px 0 8px; }
+  .prompt-lead{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:14px; }
+  .promptcard{ border:1px solid var(--hairline); border-radius:6px; overflow:hidden; margin:18px 0;
+    background:linear-gradient(180deg, rgba(232,163,61,.05), transparent 42%); }
+  .promptcard .bar{ display:flex; align-items:center; justify-content:space-between; padding:11px 15px;
+    border-bottom:1px solid var(--hairline); font-family:var(--mono); font-size:12px; color:var(--ivory-dim); letter-spacing:.03em; }
+  .promptcard .bar .label{ display:flex; align-items:center; gap:9px; }
+  .promptcard .bar .caret{ color:var(--amber); }
+  .copybtn{ font-family:var(--mono); font-size:12px; background:transparent; border:1px solid var(--hairline);
+    color:var(--ivory); padding:6px 12px; border-radius:3px; cursor:pointer; transition:border-color .18s,color .18s; }
+  .copybtn:hover{ border-color:var(--amber); color:var(--amber); }
+  .copybtn.done{ border-color:var(--amber); color:var(--amber); }
+  .promptcard pre{ margin:0; padding:20px 18px; font-family:var(--mono); font-size:13.5px; line-height:1.72;
+    color:var(--ivory); white-space:pre-wrap; overflow-x:auto; }
+  .promptcard pre .amber{ color:var(--amber); }
+
+  /* footer */
+  footer{ border-top:1px solid var(--hairline-2); margin-top:56px; padding:34px 0 60px; }
+  .syndicate{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .syndicate a{ color:var(--amber); }
+  .foot-fine{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); margin-top:22px; }
+  .foot-fine a{ color:var(--ivory-dim); } .foot-fine a:hover{ color:var(--amber); }
+
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark">Prompted<span class="dot">.</span><span class="daily">daily</span></a>
+    <a href="/#read" class="back">All stories</a>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <span class="kicker">Regional · Method</span>
+    <h1>The Conversation Was Compounding</h1>
+    <p class="dek">What happened when I sat down to think clearly about my county's industrial future — and the AI conversation pattern that produced an answer.</p>
+    <div class="byline"><span>By <span class="amber">John Andrews</span></span><span>·</span><span>Prompted.daily</span><span>·</span><span>12 min read</span><span>·</span><span>May 20, 2026</span></div>
+    <figure style="margin:0;">
+      <img class="hero-img" src="header.png" alt="Aerial blue-grey view of a Catawba County valley holding the full industrial stack at once: a data center with solar arrays on the left, a red-brick textile mill with a smokestack on the right, transmission lines and a river running through the middle, Blue Ridge mountains behind. A lone hard-hat figure stands on a foreground overlook facing the valley; amber actuarial data lines trace the machinery along his sightline, and a ghosted x-ray of underground fiber conduit runs beneath the valley floor." />
+      <figcaption class="hero-cap">The Catawba foothills, where a textile mill, a data center, and a century of industrial infrastructure share one landscape. Illustration generated with Gemini; Prompted.daily visual identity.</figcaption>
+    </figure>
+    <div class="rule"></div>
+  </div>
+
+  <div class="wrap body">
+    <p>The county I live in is the fiber optic capital of America. It's also fifth in the nation for percentage of workforce in manufacturing — 30.4%, more than three times the national average. It hosts Apple, Google, Meta, and soon Microsoft data centers. And it's currently in a severe drought, with a growing local movement to stop more data centers from being built here.</p>
+
+    <p>All of that is true at the same time. And the conversation about what to do next isn't being helped by either the panic version ("data centers are killing us") or the dismissal version ("technology marches on, get out of the way"). The real questions are sharper than either side is asking. This is an attempt to ask better ones, and to show you a way of using AI that produced answers I couldn't have gotten any other way.</p>
+
+    <h2>What I walked in with</h2>
+
+    <p>A neighbor shared a post in a local Facebook group. The post linked to a university sustainability blog about the environmental cost of the AI boom. The comments were predictable on both sides.</p>
+
+    <p>I wasn't mad at any of it. I was trying to understand it. I live and teach in a county that already hosts Apple, Google, Meta, and soon Microsoft. We make the fiber optic cable the rest of the country uses to build the internet. We're fifth in the nation for percentage of workforce in manufacturing. We're also in a severe drought, and there's a growing local movement to stop more data centers from being built here.</p>
+
+    <p>All of those things are true at the same time, and I didn't have a clear opinion on what to do with that combination. I had pieces of opinions. Reactions. Patterns I'd noticed teaching AI to students at Lenoir-Rhyne. But not a position I could defend or even fully articulate.</p>
+
+    <p>I knew the standard environmental case against data centers because I'd read the same articles everyone else has. <em>AI uses a lot of water. AI uses a lot of power. Don't generate images. Spell correctly to save the planet.</em> Some of that is true, some of it is misleading, and almost none of it is useful for deciding what a county should actually do.</p>
+
+    <p>I also knew the standard defense. <em>Progress is inevitable. The market will sort it out. These companies bring jobs and tax revenue.</em> That version gets communities steamrolled, and the people making it usually deserve the skepticism they get.</p>
+
+    <p>And I had my own concerns, which weren't abstract. We're in a severe drought right now. My county is on water restrictions. The idea of multi-million-gallon industrial cooling systems operating in that context is something I take seriously, not something I'm trying to argue past. The power grid question worries me more than the water question, honestly, because it's harder to see and harder to fix. None of that went away when I started thinking about this. I wanted to understand it, not dismiss it.</p>
+
+    <p>Neither of the available frames was going to help me think about what's happening in my own county. Both treat data centers as the subject. In Catawba County, the data centers are something else, a piece of a larger picture that includes fiber manufacturing, a furniture and textile workforce that's been reinventing itself for forty years, a university where I teach AI to students who mostly grew up here, and a drought that's making everyone reasonably nervous.</p>
+
+    <p>The conventional arguments don't touch any of that. They're written for an abstract reader thinking about an abstract data center. I needed to think about <em>this place</em>, <em>these decisions</em>, <em>the actual trade-offs</em>.</p>
+
+    <p>That's where most thinking about big topics breaks down. The available arguments are pitched at the wrong altitude. You can read every think piece on AI infrastructure and still not know what to do about the proposal in your county. The gap between national discourse and local decision-making is enormous, and most of the time we just live with it.</p>
+
+    <blockquote>What I wanted was a way to close that gap. Not a hot take. A <em>position</em>, something specific to my region that I could defend and act on, with my actual concerns intact.</blockquote>
+
+    <h2>What I did</h2>
+
+    <p>So I sat down with Claude, opened a fresh conversation, and started typing.</p>
+
+    <p>The first thing I learned is that the way most people use AI for this kind of thinking is wrong. I'd done it the wrong way myself plenty of times. Type the question. Take the answer. Move on. The answer is always plausible, often accurate, and almost never useful, because the question was too broad and the model defaulted to a balanced overview that didn't push my thinking anywhere.</p>
+
+    <p>What worked better was treating the conversation as a <em>process</em> rather than a query.</p>
+
+    <p>I started with what I actually knew — that Apple, Google, Meta, and Microsoft had data centers in the region, that we made fiber optic cable here, that I was worried about water and power, that I taught AI to students who'd grown up in these counties. I didn't ask "are data centers good or bad." I asked it to help me think about the specific situation I was in, with the specific concerns I had, in the specific region I was thinking about.</p>
+
+    <p>The first surprise came within ten minutes. I'd assumed Apple's Maiden facility drew power from the grid like any other industrial customer. It doesn't, or at least not in the way I'd pictured. Apple built three 100-acre solar farms in Catawba County — one in Maiden, one in Conover, one in Claremont — totaling 40 megawatts of solar generation, plus 10 megawatts of biogas fuel cells running on methane captured from nearby landfills. The Maiden facility generates <em>more</em> renewable energy than it consumes at peak production. At times, it's a net power producer for Duke Energy.</p>
+
+    <p>That wasn't what I expected. I'd read the same articles everyone else has. The mental picture I'd been carrying was the standard one: data center plugs into grid, drains grid, contributes to fossil fuel demand. The actual situation in my county was the opposite — a hyperscaler quietly running one of the largest private renewable energy installations in the country, for over a decade, with most local residents (me included) unaware of the scale.</p>
+
+    <p>The second surprise complicated another concern. The image that comes to mind when people picture data center development is farmland being paved over — agricultural land lost, ecosystems disrupted, working farms converted to industrial use. That's the picture I had too. But it turns out Apple was first interested in <em>renovating an abandoned textile mill</em> for the Maiden site. The mill turned out to be too small, but the broader pattern held: Catawba County started actively recruiting data centers in 2005 specifically because the textile and furniture closures had left industrial-grade power and water infrastructure standing empty. The data centers got sited where the mills used to be. The land had already been industrial for a century.</p>
+
+    <p>Neither of these surprises dissolved my concerns about water or power. The drought is still real. Microsoft's incoming four facilities will add load that no on-site solar can fully cover. The grid question remains the harder one. But both surprises complicated my mental model in a useful way. The reality on the ground was more specific than the national conversation suggested, and the specifics mattered.</p>
+
+    <p>That's when I realized what was actually happening in the conversation. I wasn't extracting information. I was building a picture of my own region that was accurate enough to think clearly about. Every fact I added let the next question be sharper. Every sharper question pulled out a more specific fact. The conversation was compounding.</p>
+
+    <h2>How the method actually works</h2>
+
+    <p>Once I noticed the conversation was compounding, I started using it differently.</p>
+
+    <p>Instead of asking single questions, I started building. Every response surfaced something I could push on — a number that needed a comparison, a claim that needed a source, a generality that needed a specific. I'd ask the next question, the response would land sharper, and the picture would get more accurate.</p>
+
+    <p>When I caught the model hedging — giving me the on-the-one-hand-on-the-other-hand version of an answer — I pushed back. <em>Don't give me both sides. Tell me which one the evidence actually supports.</em> That single move changed the quality of what came back. The model isn't trying to deceive you. It's trying to be safe. If you give it permission to take a position, it will, and the position is usually defensible.</p>
+
+    <p>When I disagreed with what came back, I said so. Not as a complaint but as more input. <em>I don't buy that — here's why.</em> The model would either revise its take with the new context, or push back and explain why it still held the original view. Both were useful. The pushback was sometimes the most useful thing in the whole conversation, because it surfaced an assumption I hadn't examined.</p>
+
+    <p>I also kept switching modes deliberately. Some stretches were research — <em>what do we actually know about this.</em> Some were drafting — <em>help me write the version of this argument I could post in a Facebook thread without getting eaten alive.</em> Some were adversarial — <em>find the holes in what I just said.</em> The same conversation could do all three, but I had to know which mode I was in and tell the model which mode I needed.</p>
+
+    <p>The biggest shift came when I stopped treating the model as the source of the analysis and started treating it as the <em>structure</em> for the analysis. I knew things about Catawba County that the model didn't — that we made pool noodles and furniture and beer, that my students mostly came from the foothills, that the people in the Facebook thread were my actual neighbors. The model knew things I didn't — the closed-loop cooling stats, the Brookings cluster research, the Apple solar specifics, the NC brownfields program. Neither of us could have produced what we ended up with alone. The conversation was the thing that combined them.</p>
+
+    <p>That's the move most people miss. They use AI like a search engine because they're treating their own knowledge as the question and the model's knowledge as the answer. But for anything that actually matters — a decision about your community, your career, your family — the question and the answer both depend on context the model can't see and you haven't fully articulated. The conversation is where those two bodies of knowledge meet, and the quality of what comes out depends on whether you keep feeding both sides into it.</p>
+
+    <h2>What I came out with</h2>
+
+    <p>When I stepped back and looked at what the conversation had produced, the picture had reorganized itself.</p>
+
+    <p>The data center question wasn't really a data center question. It was a question about whether Catawba County's strategic position — the thing that's been quietly assembled here over the last twenty years — is something to defend, extend, or surrender. Framed that way, the answer became obvious.</p>
+
+    <blockquote>The cluster is a competitive advantage compounding the other strategic benefits of our region.</blockquote>
+
+    <p>We make the fiber optic cable that the rest of the country uses to build the internet. We have one of the densest manufacturing workforces in the United States, fifth in the nation by percentage. We have hyperscale data centers from four of the largest companies in the world. We have a university where I teach AI, two community college systems with serious workforce programs, and industrial real estate left over from a century of textiles and furniture that's purpose-built for exactly what's coming next. Each of those pieces is a real asset on its own. Together, they're something rarer — a complete stack, in one place, that almost no other region in America has.</p>
+
+    <p>The data centers aren't the point. They're the <em>anchor</em> — the visible piece that makes the rest of the stack make sense to outsiders. When Corning expands here instead of in Arizona, the data centers are part of why. When a German radiopharmaceutical company chooses Catawba for its first U.S. facility, the cluster is part of why. When my students don't have to leave the foothills to work in AI-adjacent industries, the cluster is part of why.</p>
+
+    <p>That changes what the actual question is. It's not <em>should we have data centers.</em> It's <em>given that we already have a stack other regions are spending billions trying to build from scratch, how do we make sure we don't squander it?</em> That's a different conversation, and it has different answers.</p>
+
+    <p>The legitimate concerns don't go away. The grid is finite, and every megawatt allocated to a hyperscaler is one not allocated to a future manufacturer. The water budget of the Catawba-Wateree basin is contested. Microsoft's four facilities will add load that current on-site renewable generation can't fully cover. The political durability of hosting data centers tends to erode over fifteen to twenty years if local leadership doesn't actively manage the relationship. None of that is solved by acknowledging the cluster advantage.</p>
+
+    <p>But all of it becomes a <em>management</em> problem rather than a <em>whether</em> problem, and management problems have policy answers — community benefit agreements, disclosure requirements, grid additionality, infrastructure investment, workforce reinvestment commitments from the companies that benefit from being here.</p>
+
+    <p>That's where the conversation should actually be. Most of it isn't.</p>
+  </div>
+
+  <!-- THE PROMPT — the paired half the channels can't carry -->
+  <div class="wrap prompt-wrap">
+    <div class="prompt-lead">The prompt</div>
+    <div class="body">
+      <p>If you got this far, you probably want the prompt. Here it is — but the prompt is the smaller part of what makes this work. The bigger part is the disposition you bring to the conversation.</p>
+      <p>Run this on your own region. Replace the bracketed text with your actual county or metro area. Use a model with web search enabled — without it, the model is working from memory and the analysis will be thin.</p>
+    </div>
+
+    <div class="promptcard">
+      <div class="bar"><span class="label"><span class="caret">▸</span> part-1 · map the stack</span><button class="copybtn" type="button" data-copy="p1">Copy</button></div>
+<pre id="p1">I live in [your county, your state]. I want to think clearly about my
+region's industrial future. Map the full stack of what's actually here
+using public data and recent reporting. For each layer, give me named
+companies, employment figures, and notable investments from the last
+five years where available:
+
+1. Legacy industrial infrastructure — power capacity, water systems,
+   rail, highway access, existing industrial real estate, brownfields.
+2. Current manufacturing base — largest employers, sectors, workforce
+   concentration vs. the national average.
+3. Digital infrastructure — data centers, fiber, telecom.
+4. Higher education and workforce pipelines — universities, community
+   colleges, apprenticeship programs.
+5. Recent reshoring, expansion, or major investment announcements.
+
+Then assess: given this stack, what industries are most likely to land
+here in the next decade, what's missing or weak that would prevent that,
+and what would the most legitimate local concerns be?</pre>
+    </div>
+
+    <div class="body">
+      <p>That's the first part. Read what comes back carefully. Most of what's in the response, you probably didn't know about your own region. That's the point — you're building a picture accurate enough to think with, which is the prerequisite for everything that comes next.</p>
+      <p>Then comes the part most people skip. Write out, in two or three sentences, what you actually believe about your region's industrial direction. Don't soften it. Don't perform balance. Write the position you'd defend at a county commission meeting. Then send this:</p>
+    </div>
+
+    <div class="promptcard">
+      <div class="bar"><span class="label"><span class="caret">▸</span> part-2 · pressure-test your position</span><button class="copybtn" type="button" data-copy="p2">Copy</button></div>
+<pre id="p2">Here's my position: [paste your view]. Based on the regional stack you
+just mapped, identify three ways my position is incomplete, inconsistent
+with the facts on the ground, or driven by an assumption I haven't
+examined. Be direct. Don't perform balance. If my position is
+well-supported, say that and explain why. If it's not, tell me where it
+breaks down. I'm asking you to push back, not validate.</pre>
+    </div>
+
+    <div class="body">
+      <p>Sit with the response before you do anything with it. Don't argue back yet. Don't dismiss what doesn't fit. The exercise only works if you let the model do what you asked.</p>
+      <p>That's the whole prompt. Two parts. The first part gets you specific. The second part gets you honest. Most of the work happens in the second one, and most readers won't run it. That's their loss.</p>
+      <p>The method this issue teaches isn't really about regions or data centers or any specific topic. It's about how to think with AI on questions that actually matter to you — your community, your career, your family, the decisions you'll make this year that you don't yet know how to evaluate. Run this pattern on whatever you're trying to think about. Build context. Push for specifics. Switch modes deliberately. Disagree as input. Let it push back. Combine what you know with what the model knows, and trust neither one of you to produce the answer alone.</p>
+      <p>That's the whole method. The data centers were just where I happened to practice it.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p class="syndicate">Also published on <a href="https://katadhin.medium.com/the-conversation-was-compounding-d7b27ab52fc1" target="_blank" rel="noopener">Medium</a>. Canonical version lives here.</p>
+      <p class="foot-fine"><em>John Andrews teaches at Lenoir-Rhyne University and writes Prompted.daily, a publication about thinking well with AI. He lives in Catawba County, North Carolina.</em></p>
+      <p class="foot-fine"><a href="/">← Prompted.daily</a> · © <span id="yr"></span></p>
+    </div>
+  </footer>
+</article>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = document.getElementById(btn.getAttribute('data-copy'));
+      if(!pre) return;
+      navigator.clipboard.writeText(pre.innerText).then(function(){
+        var t = btn.textContent; btn.textContent = 'Copied ✓'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = t; btn.classList.remove('done'); }, 1900);
+      }).catch(function(){ btn.textContent = 'Select + copy'; });
+    });
+  });
+</script>
+</body>
+</html>
