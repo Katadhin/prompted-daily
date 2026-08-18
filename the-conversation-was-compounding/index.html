@@ -53,6 +53,7 @@
   .wordmark{ font-family:var(--serif); font-weight:900; font-size:21px; color:var(--ivory);
     display:inline-flex; align-items:baseline; letter-spacing:-.01em; }
   .wordmark .dot{ color:var(--amber); } .wordmark .daily{ font-weight:600; }
+  .wordmark-img{ height:26px; width:auto; display:block; }
   .back{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
   .back:hover{ color:var(--ivory); }
   .back::before{ content:"← "; color:var(--amber); }
@@ -114,7 +115,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="/" class="wordmark">Prompted<span class="dot">.</span><span class="daily">daily</span></a>
+    <a href="/" class="wordmark" aria-label="Prompted.daily home"><img class="wordmark-img" src="/img/wordmark.png" alt="Prompted.daily" /></a>
     <a href="/#read" class="back">All stories</a>
   </div>
 </header>

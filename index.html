@@ -13,9 +13,11 @@
 <meta property="og:title" content="Prompted.daily" />
 <meta property="og:description" content="Don't just read the news. Engage with it. Essays paired with the prompt that produced them." />
 <meta property="og:site_name" content="Prompted.daily" />
-<!-- TODO: set canonical URL + a share image once the domain is live -->
-<!-- <meta property="og:url" content="https://prompteddaily.com/" /> -->
-<!-- <meta property="og:image" content="https://prompteddaily.com/share.png" /> -->
+<meta property="og:url" content="https://prompteddaily.com/" />
+<meta property="og:image" content="https://prompteddaily.com/share.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://prompteddaily.com/share.png" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,6 +84,7 @@
   }
   .wordmark .dot{ color:var(--amber); }
   .wordmark .daily{ font-weight:600; }
+  .wordmark-img{ height:26px; width:auto; display:block; }
 
   /* ---- nav ---- */
   header.nav{
@@ -240,7 +243,7 @@
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="wordmark" aria-label="Prompted.daily home">Prompted<span class="dot">.</span><span class="daily">daily</span></a>
+    <a href="#top" class="wordmark" aria-label="Prompted.daily home"><img class="wordmark-img" src="/img/wordmark.png" alt="Prompted.daily" /></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#read" class="hide-sm">Read</a>
       <a href="#prompt" class="hide-sm">The prompt</a>
