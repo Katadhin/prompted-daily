@@ -25,6 +25,9 @@ Engage with it."
 /<slug>/index.html                   one folder per essay — the on-site canonical version
 /<slug>/header.png                   that essay's header image
 /img/<slug>.jpg                      homepage card thumbnails (light, optimized)
+/posts/<slug>.json                   structured spec for each generated essay — the source of truth
+/tools/build_essay.py                generator: spec -> essay page + homepage card (see below)
+/tools/essay-template.html           parametrized template build_essay.py fills in
 /CNAME                               prompteddaily.com
 /.nojekyll                           serve files as-is
 /CLAUDE.md /README.md                this file + deploy notes
@@ -64,7 +67,29 @@ else: nh=int(w/t); y=(h-nh)//2; im=im.crop((0,y,w,y+nh))
 im.resize((640,360), Image.LANCZOS).save(DST,'JPEG',quality=82,optimize=True)
 ```
 
-## Task: migrate a Medium essay onto the site
+## Task: build an essay page (preferred — via generator script)
+This is now the default path for every new essay, canonical-on-site is the standard
+treatment, not the exception. It replaces steps 2–6 of manual template-copying below
+with a script that can't drift from the CSS classes or forget a canonical tag.
+
+1. Get the essay text + its engineered prompt(s) from the user (or a Medium URL).
+   If the prompt boundary is at all ambiguous, STOP and ask — the prompt is the hero
+   element; a mis-lift is the worst possible error. This judgment call is NOT
+   something the script makes for you.
+2. Draft `posts/<slug>.json` (see the docstring in `tools/build_essay.py` for the
+   full field list). `body_html` is the essay as raw HTML. `card_blurb` is the
+   user's editorial voice to approve, not yours to finalize — draft it, flag it.
+3. If a header image exists, set `hero_image.src` to its file path. If none exists,
+   omit `hero_image` entirely — never invent one.
+4. Run `python3 tools/build_essay.py posts/<slug>.json --dry-run` first to catch
+   spec errors without touching any files. Then run it for real (no flag).
+5. STOP. Show the rendered page and the homepage card the script printed. Do not
+   commit or push yet — that gate doesn't move just because the build got faster.
+6. Add "Also published on Medium" is automatic if `medium_url` is set in the spec.
+
+## Task: migrate a Medium essay onto the site (manual fallback)
+Use this only if the generator script can't handle something about the piece —
+otherwise use the script above.
 1. Get the essay text + its engineered prompt(s) from the user (or a Medium URL).
 2. Copy an existing `<slug>/index.html` (e.g. `the-conversation-was-compounding`) as
    the template. Keep all styling and the copy-button JS.

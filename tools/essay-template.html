@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>__PAGE_TITLE__ — Prompted.daily</title>
+<meta name="description" content="__META_DESCRIPTION__" />
+
+<!-- Canonical points HERE: the site is the original, Medium is the syndicated copy. -->
+<link rel="canonical" href="https://prompteddaily.com/__SLUG__/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="__PAGE_TITLE__" />
+<meta property="og:description" content="__OG_DESCRIPTION__" />
+<meta property="og:site_name" content="Prompted.daily" />
+<meta property="og:url" content="https://prompteddaily.com/__SLUG__/" />
+<meta property="og:image" content="__OG_IMAGE__" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23E8A33D'/%3E%3C/svg%3E" />
+
+<style>
+  :root{
+    --navy:#16162b; --navy-deep:#101024;
+    --ivory:#ECE6D8; --ivory-soft:#E6E0D2; --ivory-dim:#8f8fa6;
+    --amber:#E8A33D; --hairline:rgba(236,230,216,.10); --hairline-2:rgba(236,230,216,.06);
+    --serif:"Fraunces",Georgia,serif;
+    --read:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; color:var(--ivory);
+    background:radial-gradient(120% 70% at 50% -8%, #1c1c38 0%, var(--navy) 46%, var(--navy-deep) 100%);
+    background-attachment:fixed;
+    font-family:var(--read); font-size:19px; line-height:1.72;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{ color:inherit; }
+  .wrap{ width:100%; max-width:720px; margin:0 auto; padding:0 26px; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); }
+
+  header.nav{ position:sticky; top:0; z-index:50; background:rgba(16,16,36,.72);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--hairline-2); }
+  .nav-inner{ width:100%; max-width:1080px; margin:0 auto; padding:0 26px; height:64px;
+    display:flex; align-items:center; justify-content:space-between; }
+  .wordmark{ font-family:var(--serif); font-weight:900; font-size:21px; color:var(--ivory);
+    display:inline-flex; align-items:baseline; letter-spacing:-.01em; }
+  .wordmark .dot{ color:var(--amber); } .wordmark .daily{ font-weight:600; }
+  .wordmark-img{ height:26px; width:auto; display:block; }
+  .back{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .back:hover{ color:var(--ivory); }
+  .back::before{ content:"← "; color:var(--amber); }
+
+  article{ padding:70px 0 40px; }
+  .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); }
+  h1{ font-family:var(--serif); font-weight:900; font-size:clamp(34px,5.4vw,54px); line-height:1.05;
+    letter-spacing:-.02em; margin:16px 0 0; }
+  .dek{ font-family:var(--read); font-style:italic; font-size:20px; color:var(--ivory-soft);
+    margin:20px 0 0; line-height:1.5; }
+  .byline{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); margin:26px 0 0;
+    display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .byline .amber{ color:var(--amber); }
+  .rule{ height:1px; background:var(--hairline); margin:34px 0 6px; }
+  .hero-img{ width:100%; display:block; border-radius:6px; border:1px solid var(--hairline); margin:30px 0 0; }
+  .hero-cap{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); line-height:1.5; margin:10px 0 0; }
+
+  .body > p{ margin:24px 0; }
+  .body h2{ font-family:var(--serif); font-weight:600; font-size:clamp(23px,3.4vw,30px);
+    letter-spacing:-.01em; margin:52px 0 8px; line-height:1.15; }
+  .body em{ font-style:italic; color:var(--ivory-soft); }
+  .body strong{ font-weight:600; color:var(--ivory); }
+  .body a{ color:var(--amber); text-decoration:underline; text-underline-offset:2px; }
+  .body a:hover{ color:var(--ivory); }
+
+  blockquote{ margin:34px 0; padding:4px 0 4px 24px; border-left:2px solid var(--amber);
+    font-family:var(--serif); font-weight:600; font-size:22px; line-height:1.4; color:var(--ivory); font-style:normal; }
+  blockquote.plain{ font-family:var(--read); font-weight:500; font-style:italic; font-size:20px; color:var(--ivory-soft); }
+
+  .prompt-wrap{ margin:56px 0 8px; }
+  .prompt-lead{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:14px; }
+  .promptcard{ border:1px solid var(--hairline); border-radius:6px; overflow:hidden; margin:18px 0;
+    background:linear-gradient(180deg, rgba(232,163,61,.05), transparent 42%); }
+  .promptcard .bar{ display:flex; align-items:center; justify-content:space-between; padding:11px 15px;
+    border-bottom:1px solid var(--hairline); font-family:var(--mono); font-size:12px; color:var(--ivory-dim); letter-spacing:.03em; }
+  .promptcard .bar .label{ display:flex; align-items:center; gap:9px; }
+  .promptcard .bar .caret{ color:var(--amber); }
+  .copybtn{ font-family:var(--mono); font-size:12px; background:transparent; border:1px solid var(--hairline);
+    color:var(--ivory); padding:6px 12px; border-radius:3px; cursor:pointer; transition:border-color .18s,color .18s; }
+  .copybtn:hover{ border-color:var(--amber); color:var(--amber); }
+  .copybtn.done{ border-color:var(--amber); color:var(--amber); }
+  .promptcard pre{ margin:0; padding:20px 18px; font-family:var(--mono); font-size:13.5px; line-height:1.72;
+    color:var(--ivory); white-space:pre-wrap; overflow-x:auto; }
+  .promptcard pre .amber{ color:var(--amber); }
+
+  footer{ border-top:1px solid var(--hairline-2); margin-top:56px; padding:34px 0 60px; }
+  .syndicate{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .syndicate a{ color:var(--amber); }
+  .foot-fine{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); margin-top:22px; }
+  .foot-fine a{ color:var(--ivory-dim); } .foot-fine a:hover{ color:var(--amber); }
+
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark" aria-label="Prompted.daily home"><img class="wordmark-img" src="/img/wordmark.png" alt="Prompted.daily" /></a>
+    <a href="/#read" class="back">All stories</a>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <span class="kicker">__KICKER__</span>
+    <h1>__TITLE__</h1>
+    <p class="dek">__DEK__</p>
+    <div class="byline"><span>By <span class="amber">John Andrews</span></span><span>·</span><span>Prompted.daily</span><span>·</span><span>__READ_MINUTES__ min read</span><span>·</span><span>__DATE__</span></div>
+    __HERO_BLOCK__
+    <div class="rule"></div>
+  </div>
+
+  <div class="wrap body">
+    __BODY__
+  </div>
+
+  <!-- THE PROMPT — the paired half the channels can't carry -->
+  <div class="wrap prompt-wrap">
+    <div class="prompt-lead">The prompt</div>
+    __PROMPT_SECTION__
+  </div>
+
+  <footer>
+    <div class="wrap">
+      __SYNDICATION_LINE__
+      <p class="foot-fine"><em>John Andrews teaches at Lenoir-Rhyne University and writes Prompted.daily, a publication about thinking well with AI. He lives in Catawba County, North Carolina.</em></p>
+      <p class="foot-fine"><a href="/">← Prompted.daily</a> · © <span id="yr"></span></p>
+    </div>
+  </footer>
+</article>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = document.getElementById(btn.getAttribute('data-copy'));
+      if(!pre) return;
+      navigator.clipboard.writeText(pre.innerText).then(function(){
+        var t = btn.textContent; btn.textContent = 'Copied ✓'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = t; btn.classList.remove('done'); }, 1900);
+      }).catch(function(){ btn.textContent = 'Select + copy'; });
+    });
+  });
+</script>
+</body>
+</html>

@@ -17,9 +17,10 @@ human look before anything goes live.
    open and the computer is awake** — not a cloud agent.
 2. Connect GitHub through **Claude Code** (handles git natively) or a GitHub connector you
    authorize in-app. Your credentials stay in the connector; Claude never stores them.
-3. Clone the repo somewhere Cowork can read/write, e.g. `~/prompted-site`.
-4. Keep an existing article as the template — any `<slug>/index.html`
-   (start from `the-conversation-was-compounding/index.html`).
+3. Point Cowork at the existing working clone, `~/Documents/GitHub/prompted-site` —
+   don't let it clone a second copy elsewhere; two local repos will drift.
+4. Confirm Pillow is installed (`pip install Pillow --break-system-packages`) — the
+   generator needs it for header image processing.
 
 ---
 
@@ -28,25 +29,25 @@ human look before anything goes live.
 Save as a Cowork task. Trigger it yourself; do **not** `/schedule` it.
 
 > **Standing instructions:**
-> You are packaging a finished Prompted.daily piece. I'll give you the essay text and its
-> engineered prompt(s) and a short slug. If I give you a Medium URL instead, fetch it and
-> extract the essay body and prompt block(s) — and if the prompt boundary is at all
-> ambiguous, STOP and ask me rather than guessing.
+> You are packaging a finished Prompted.daily piece for on-site canonical publishing,
+> the default treatment for every new essay. I'll give you the essay text and its
+> engineered prompt(s) and a short slug. If I give you a Medium URL instead, fetch it
+> and extract the essay body and prompt block(s), and if the prompt boundary is at all
+> ambiguous, STOP and ask me rather than guessing — the script doesn't make that call.
 >
-> Working in `~/prompted-site`:
-> 1. Copy the template `the-conversation-was-compounding/index.html` to a new
->    `<slug>/index.html`. Keep all styling and the copy-button behavior.
-> 2. Replace title, kicker, dek, date, byline, essay body, and prompt block(s). Put each
->    prompt in its own copy-block card. Preserve house voice in any copy you write: no "I"
->    openers, minimal em-dashes, active prose, specific over general.
-> 3. Set the page `<link rel="canonical">` to `https://prompteddaily.com/<slug>/`.
-> 4. On `index.html`, add a card to the `.cards` grid: kicker, title, a one-line blurb,
->    `href="/<slug>/"`, CTA "Read + run the prompt". Draft the blurb but FLAG it — the
->    blurb is my voice to approve, not yours to finalize.
-> 5. If a Medium URL exists, add "Also published on Medium" to the article footer.
-> 6. STOP. Show me the rendered article page and the new card. Do not commit or push yet.
-> 7. After I approve, commit and push to `main`. Report the live URL.
-> 8. Remind me to set the Medium post's canonical link to the site URL (manual, my step).
+> Working in `~/Documents/GitHub/prompted-site`:
+> 1. Draft `posts/<slug>.json` (see the field list in `tools/build_essay.py`'s docstring).
+>    `body_html` is the essay as raw HTML. If I gave you a header image, set
+>    `hero_image.src` to it; if not, omit `hero_image` entirely rather than inventing one.
+> 2. Draft `card_blurb` in house voice: no "I" openers, minimal em-dashes, active prose,
+>    specific over general. This is my voice to approve, not yours to finalize.
+> 3. Run `python3 tools/build_essay.py posts/<slug>.json --dry-run` to catch spec problems
+>    with nothing written yet. Fix anything it flags, then run it for real (no flag).
+> 4. STOP. Show me the rendered article page and the new card the script printed. Do not
+>    commit or push yet — the script writing files faster doesn't change this gate.
+> 5. After I approve, commit and push to `main`. Report the live URL.
+> 6. If a Medium URL exists or will exist, remind me to set that post's canonical link
+>    to the site URL — manual, my step, no script touches Medium.
 
 ---
 
