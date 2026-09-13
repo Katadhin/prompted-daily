@@ -125,6 +125,14 @@
     line-height:1.5;
   }
   .hero .lede .dim{ color:var(--ivory-dim); }
+  .hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:52px; align-items:center; }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } .hero-featured{ margin-top:8px; max-width:480px; } }
+  .hero-featured{ position:relative; box-shadow:0 0 0 1px rgba(232,163,61,.18); }
+  .hero-featured-tag{
+    position:absolute; top:14px; left:14px; z-index:1;
+    font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--navy-deep); background:var(--amber); padding:4px 9px; border-radius:2px;
+  }
   .cta-row{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
   .btn{
     font-family:var(--mono); font-size:13px; letter-spacing:.03em;
@@ -263,14 +271,26 @@
       <circle cx="112" cy="45" r="4" stroke="currentColor" stroke-width="1.4"/>
       <path d="M150 34c6-10 12-12 12-12M60 33V20h6" stroke="currentColor" stroke-width="1.4"/>
     </svg>
-    <div class="wrap">
-      <span class="eyebrow reveal">An editorial project · @katadhin</span>
-      <h1 class="reveal">Don't just read the news. <span class="break">Engage with it.</span></h1>
-      <p class="lede reveal">Every piece pairs an analytical essay with the engineered prompt that produced it. <span class="dim">Read the argument, then run it yourself — bring a claim to the machine and let it break.</span></p>
-      <div class="cta-row reveal">
-        <a href="#read" class="btn solid">Read the essays</a>
-        <a href="#prompt" class="btn ghost">See how a prompt works</a>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">An editorial project · @katadhin</span>
+        <h1 class="reveal">Don't just read the news. <span class="break">Engage with it.</span></h1>
+        <p class="lede reveal">Every piece pairs an analytical essay with the engineered prompt that produced it. <span class="dim">Read the argument, then run it yourself — bring a claim to the machine and let it break.</span></p>
+        <div class="cta-row reveal">
+          <a href="#read" class="btn solid">Read the essays</a>
+          <a href="#prompt" class="btn ghost">See how a prompt works</a>
+        </div>
       </div>
+      <!-- LATEST:START -->
+      <a href="/the-question-isnt-values/" class="card hero-featured reveal">
+        <span class="hero-featured-tag">Latest</span>
+        <img class="card-thumb" src="/img/the-question-isnt-values.jpg" alt="A cracked antique pressure gauge with the needle in the red zone and exposed brass gears." />
+        <span class="kicker">AI Safety · Method</span>
+        <h3>The Question Isn't Whether AI Has Values. It's Whether It Has Anything to Lose.</h3>
+        <p>Amodei asked the industry to slow down. The sharper problem isn't values, it's that the machine has nothing to lose when it drifts.</p>
+        <span class="read">Read + run the prompt</span>
+      </a>
+      <!-- LATEST:END -->
     </div>
   </section>
 
