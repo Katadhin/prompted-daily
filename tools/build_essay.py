@@ -35,7 +35,6 @@ This script does not judge whether card_blurb or prompt_section content is any g
 That judgment is the human review step. It only removes the risk of a hand-edit typo
 in the surrounding template — canonical tags, card markup, CSS classes.
 """
-from __future__ import annotations
 import argparse
 import html
 import json
@@ -147,32 +146,87 @@ def render_card(spec: dict) -> str:
     )
 
 
+def _split_cards_grid(index_html: str) -> tuple[str, str, str]:
+    """Return (before, grid_inner, after) split around the .cards grid only.
+    The grid contains no nested <div> (verified against the real markup), so
+    the first </div> after the opening tag reliably closes it — this is what
+    keeps this function from ever touching the hero-featured block, which
+    lives in a different part of the page and can share the same href."""
+    marker = '<div class="cards">'
+    start = index_html.find(marker)
+    if start == -1:
+        raise RuntimeError("Could not find the .cards grid opening tag in index.html")
+    inner_start = start + len(marker)
+    close = index_html.find("</div>", inner_start)
+    if close == -1:
+        raise RuntimeError("Could not find the .cards grid's closing tag")
+    return index_html[:inner_start], index_html[inner_start:close], index_html[close:]
+
+
 def upsert_card(spec: dict, dry_run: bool) -> str:
     index_html = INDEX.read_text(encoding="utf-8")
     slug = spec["slug"]
-    href_marker = f'href="/{slug}/"'
+    before, grid, after = _split_cards_grid(index_html)
 
-    # Remove any existing card for this slug so re-runs are idempotent, not additive.
+    # Remove any existing archive card for this slug so re-runs are idempotent.
+    # Scoped to `grid` only — the hero-featured block for the same slug lives
+    # outside this substring entirely and is never touched here.
     card_pattern = re.compile(
         r'\n?        <a class="card reveal" href="/' + re.escape(slug) + r'/">.*?</a>\n?',
         re.DOTALL,
     )
-    if href_marker in index_html and not card_pattern.search(index_html):
+    href_marker = f'href="/{slug}/"'
+    if href_marker in grid and not card_pattern.search(grid):
         raise RuntimeError(
-            f"Found href for {slug} but couldn't isolate its card block — "
-            "stopping rather than risk corrupting the grid. Fix by hand."
+            f"Found an archive-grid href for {slug} but couldn't isolate its card "
+            "block — stopping rather than risk corrupting the grid. Fix by hand."
         )
-    index_html = card_pattern.sub("\n", index_html)
+    grid = card_pattern.sub("\n", grid)
 
     new_card = render_card(spec)
-    marker = '<div class="cards">'
-    if marker not in index_html:
-        raise RuntimeError("Could not find the .cards grid opening tag in index.html")
-    index_html = index_html.replace(marker, marker + "\n\n" + new_card, 1)
+    grid = "\n\n" + new_card + grid
 
+    index_html = before + grid + after
     if not dry_run:
         INDEX.write_text(index_html, encoding="utf-8")
     return new_card
+
+
+def render_latest(spec: dict) -> str:
+    slug = spec["slug"]
+    thumb_path = REPO / "img" / f"{slug}.jpg"
+    img_tag = ""
+    if thumb_path.exists():
+        alt = html.escape(spec.get("card_thumb_alt", ""), quote=True)
+        img_tag = f'<img class="card-thumb" src="/img/{slug}.jpg" alt="{alt}" />\n        '
+    return (
+        f'<a href="/{slug}/" class="card hero-featured reveal">\n'
+        f'        <span class="hero-featured-tag">Latest</span>\n'
+        f'        {img_tag}<span class="kicker">{spec["kicker"]}</span>\n'
+        f'        <h3>{spec["title"]}</h3>\n'
+        f'        <p>{spec["card_blurb"]}</p>\n'
+        f'        <span class="read">Read + run the prompt</span>\n'
+        '      </a>'
+    )
+
+
+def upsert_latest(spec: dict, dry_run: bool) -> str | None:
+    """Point the homepage hero at this post, since it's the one just published.
+    Silently does nothing if the hero markers don't exist yet — the hero is a
+    deliberate one-time addition (see the homepage redesign), not something
+    every repo is assumed to have."""
+    index_html = INDEX.read_text(encoding="utf-8")
+    start_marker, end_marker = "<!-- LATEST:START -->", "<!-- LATEST:END -->"
+    start = index_html.find(start_marker)
+    end = index_html.find(end_marker)
+    if start == -1 or end == -1:
+        return None
+    end += len(end_marker)
+    new_block = f"{start_marker}\n      {render_latest(spec)}\n      {end_marker}"
+    index_html = index_html[:start] + new_block + index_html[end:]
+    if not dry_run:
+        INDEX.write_text(index_html, encoding="utf-8")
+    return new_block
 
 
 def process_hero_image(spec: dict, dry_run: bool) -> None:
@@ -185,7 +239,7 @@ def process_hero_image(spec: dict, dry_run: bool) -> None:
         sys.exit("Pillow is required for hero image processing: pip install Pillow --break-system-packages")
 
     slug = spec["slug"]
-    src_path = Path(hero["src"]).expanduser()
+    src_path = Path(hero["src"])
     if not src_path.exists():
         sys.exit(f"hero_image.src not found: {src_path}")
 
@@ -240,8 +294,16 @@ def main():
         print(f"Wrote {out_dir / 'index.html'}")
 
     card_html = upsert_card(spec, args.dry_run)
-    print("--- Homepage card ---")
+    print("--- Homepage card (archive grid) ---")
     print(card_html)
+
+    latest_html = upsert_latest(spec, args.dry_run)
+    if latest_html is not None:
+        print("--- Homepage hero (now points here) ---")
+        print(latest_html)
+    else:
+        print("--- Homepage hero: no LATEST markers found, left untouched ---")
+
     if args.dry_run:
         print("\n(dry run — index.html not modified)")
     else:
