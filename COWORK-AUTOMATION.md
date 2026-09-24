@@ -61,7 +61,30 @@ Save as a Cowork task, then `/schedule` for Monday 08:00.
 > 2. Confirm each returns 200 and its canonical resolves to itself.
 > 3. List every homepage card still pointing to `medium.com` — migration candidates.
 > 4. Flag broken links, and any article missing its prompt copy-block.
-> 5. Save a short report to `~/prompted-site/_reports/health-<date>.md` and notify me.
+> 5. Save a short report to `~/Documents/GitHub/prompted-site/_reports/health-<date>.md` and notify me.
+
+---
+
+## Task 3 — Mid-week story-prep nudge (SCHEDULE this one, weekly)
+
+Save as a Cowork task, then `/schedule` for Wednesday, whatever time you're usually at
+Desktop. This nudges based on actual repo signal, not a blind weekly ping.
+
+> **Standing instructions:**
+> Check on story-prep timing. Change no files, this is a nudge only, no writes, no git actions.
+> 1. In `~/Documents/GitHub/prompted-site`, run
+>    `git log -1 --format=%cd --date=short -- posts/` to find when the last new post
+>    spec was actually added, not just when index.html last changed.
+> 2. Check whether any file in `posts/` has no matching `<slug>/index.html` folder — that
+>    means a spec was drafted but never built, an unfinished piece, not a shipped one.
+> 3. If something is unfinished, name it directly: "You have a spec for <slug> that
+>    hasn't been built yet."
+> 4. If it has been 5 or more days since the last new post AND nothing is mid-build,
+>    send a nudge naming the last piece and the day count: "It's been N days since
+>    [title]. Worth opening a chat to start drafting the next one, or blocking time to
+>    finish whatever's underway."
+> 5. If it has been fewer than 5 days and nothing is stuck mid-build, stay silent.
+>    No news is the correct outcome most weeks, don't nudge just because it's Wednesday.
 
 ---
 
