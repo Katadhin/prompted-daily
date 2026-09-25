@@ -11,6 +11,10 @@ Usage:
     python3 tools/build_essay.py posts/<slug>.json
     python3 tools/build_essay.py posts/<slug>.json --dry-run   (build, no write)
 
+Requires Python 3.9+ (the `from __future__ import annotations` line below is
+load-bearing — without it, the `dict | None` style type hints in this file
+crash on Python < 3.10, which is what a stock macOS python3 usually is).
+
 Spec fields (posts/<slug>.json):
     slug              str, required. Folder name and URL path.
     title             str, required. Also used as <h1> and og:title.
@@ -35,6 +39,8 @@ This script does not judge whether card_blurb or prompt_section content is any g
 That judgment is the human review step. It only removes the risk of a hand-edit typo
 in the surrounding template — canonical tags, card markup, CSS classes.
 """
+from __future__ import annotations
+
 import argparse
 import html
 import json
@@ -239,7 +245,7 @@ def process_hero_image(spec: dict, dry_run: bool) -> None:
         sys.exit("Pillow is required for hero image processing: pip install Pillow --break-system-packages")
 
     slug = spec["slug"]
-    src_path = Path(hero["src"])
+    src_path = Path(hero["src"]).expanduser()
     if not src_path.exists():
         sys.exit(f"hero_image.src not found: {src_path}")
 
