@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Isn't Taking Jobs. It's Sorting Them. — Prompted.daily</title>
+<meta name="description" content="A Census report shows AI-exposed graduates struggling. Jensen Huang says AI only changes tasks, not jobs. A four-variable framework explains why both are right about different jobs, and what that means for how students should prepare." />
+
+<!-- Canonical points HERE: the site is the original, Medium is the syndicated copy. -->
+<link rel="canonical" href="https://prompteddaily.com/its-sorting-them/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AI Isn't Taking Jobs. It's Sorting Them." />
+<meta property="og:description" content="AI doesn't take jobs uniformly. It sorts them, by task-job overlap, supply, demand, and who's accountable when it's wrong." />
+<meta property="og:site_name" content="Prompted.daily" />
+<meta property="og:url" content="https://prompteddaily.com/its-sorting-them/" />
+<meta property="og:image" content="https://prompteddaily.com/its-sorting-them/header.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Isn't Taking Jobs. It's Sorting Them." />
+<meta name="twitter:description" content="AI doesn't take jobs uniformly. It sorts them, by task-job overlap, supply, demand, and who's accountable when it's wrong." />
+<meta name="twitter:image" content="https://prompteddaily.com/its-sorting-them/header.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23E8A33D'/%3E%3C/svg%3E" />
+
+<style>
+  :root{
+    --navy:#16162b; --navy-deep:#101024;
+    --ivory:#ECE6D8; --ivory-soft:#E6E0D2; --ivory-dim:#8f8fa6;
+    --amber:#E8A33D; --hairline:rgba(236,230,216,.10); --hairline-2:rgba(236,230,216,.06);
+    --serif:"Fraunces",Georgia,serif;
+    --read:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; color:var(--ivory);
+    background:radial-gradient(120% 70% at 50% -8%, #1c1c38 0%, var(--navy) 46%, var(--navy-deep) 100%);
+    background-attachment:fixed;
+    font-family:var(--read); font-size:19px; line-height:1.72;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{ color:inherit; }
+  .wrap{ width:100%; max-width:720px; margin:0 auto; padding:0 26px; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); }
+
+  header.nav{ position:sticky; top:0; z-index:50; background:rgba(16,16,36,.72);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--hairline-2); }
+  .nav-inner{ width:100%; max-width:1080px; margin:0 auto; padding:0 26px; height:64px;
+    display:flex; align-items:center; justify-content:space-between; }
+  .wordmark{ font-family:var(--serif); font-weight:900; font-size:21px; color:var(--ivory);
+    display:inline-flex; align-items:baseline; letter-spacing:-.01em; }
+  .wordmark .dot{ color:var(--amber); } .wordmark .daily{ font-weight:600; }
+  .wordmark-img{ height:26px; width:auto; display:block; }
+  .back{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .back:hover{ color:var(--ivory); }
+  .back::before{ content:"← "; color:var(--amber); }
+
+  article{ padding:70px 0 40px; }
+  .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); }
+  h1{ font-family:var(--serif); font-weight:900; font-size:clamp(34px,5.4vw,54px); line-height:1.05;
+    letter-spacing:-.02em; margin:16px 0 0; }
+  .dek{ font-family:var(--read); font-style:italic; font-size:20px; color:var(--ivory-soft);
+    margin:20px 0 0; line-height:1.5; }
+  .byline{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); margin:26px 0 0;
+    display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .byline .amber{ color:var(--amber); }
+  .rule{ height:1px; background:var(--hairline); margin:34px 0 6px; }
+  .hero-img{ width:100%; display:block; border-radius:6px; border:1px solid var(--hairline); margin:30px 0 0; }
+  .hero-cap{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); line-height:1.5; margin:10px 0 0; }
+
+  .body > p{ margin:24px 0; }
+  .body h2{ font-family:var(--serif); font-weight:600; font-size:clamp(23px,3.4vw,30px);
+    letter-spacing:-.01em; margin:52px 0 8px; line-height:1.15; }
+  .body em{ font-style:italic; color:var(--ivory-soft); }
+  .body strong{ font-weight:600; color:var(--ivory); }
+  .body a{ color:var(--amber); text-decoration:underline; text-underline-offset:2px; }
+  .body a:hover{ color:var(--ivory); }
+
+  blockquote{ margin:34px 0; padding:4px 0 4px 24px; border-left:2px solid var(--amber);
+    font-family:var(--serif); font-weight:600; font-size:22px; line-height:1.4; color:var(--ivory); font-style:normal; }
+  blockquote.plain{ font-family:var(--read); font-weight:500; font-style:italic; font-size:20px; color:var(--ivory-soft); }
+
+  .prompt-wrap{ margin:56px 0 8px; }
+  .prompt-lead{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:14px; }
+  .promptcard{ border:1px solid var(--hairline); border-radius:6px; overflow:hidden; margin:18px 0;
+    background:linear-gradient(180deg, rgba(232,163,61,.05), transparent 42%); }
+  .promptcard .bar{ display:flex; align-items:center; justify-content:space-between; padding:11px 15px;
+    border-bottom:1px solid var(--hairline); font-family:var(--mono); font-size:12px; color:var(--ivory-dim); letter-spacing:.03em; }
+  .promptcard .bar .label{ display:flex; align-items:center; gap:9px; }
+  .promptcard .bar .caret{ color:var(--amber); }
+  .copybtn{ font-family:var(--mono); font-size:12px; background:transparent; border:1px solid var(--hairline);
+    color:var(--ivory); padding:6px 12px; border-radius:3px; cursor:pointer; transition:border-color .18s,color .18s; }
+  .copybtn:hover{ border-color:var(--amber); color:var(--amber); }
+  .copybtn.done{ border-color:var(--amber); color:var(--amber); }
+  .promptcard pre{ margin:0; padding:20px 18px; font-family:var(--mono); font-size:13.5px; line-height:1.72;
+    color:var(--ivory); white-space:pre-wrap; overflow-x:auto; }
+  .promptcard pre .amber{ color:var(--amber); }
+
+  footer{ border-top:1px solid var(--hairline-2); margin-top:56px; padding:34px 0 60px; }
+  .syndicate{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .syndicate a{ color:var(--amber); }
+  .foot-fine{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); margin-top:22px; }
+  .foot-fine a{ color:var(--ivory-dim); } .foot-fine a:hover{ color:var(--amber); }
+
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark" aria-label="Prompted.daily home"><img class="wordmark-img" src="/img/wordmark.png" alt="Prompted.daily" /></a>
+    <a href="/#read" class="back">All stories</a>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <span class="kicker">AI & Work · Framework</span>
+    <h1>AI Isn't Taking Jobs. It's Sorting Them.</h1>
+    <p class="dek">A Census Bureau report shows AI-exposed graduates struggling to find work. Nvidia's Jensen Huang says AI doesn't eliminate jobs, only tasks. Both are citing real evidence. What's actually predictable is the sort itself.</p>
+    <div class="byline"><span>By <span class="amber">John Andrews</span></span><span>·</span><span>Prompted.daily</span><span>·</span><span>6 min read</span><span>·</span><span>September 24, 2026</span></div>
+    <figure style="margin:0;">
+      <img class="hero-img" src="header.png" alt="Aerial view of a railway switching yard at dawn, an amber data overlay tracing the diverging tracks toward different destinations, a lone switch operator on a foreground gantry." />
+      <figcaption class="hero-cap">The yard doesn't ask whether a job disappears. It asks which track it gets routed onto. Illustration generated with Gemini.</figcaption>
+    </figure>
+    <div class="rule"></div>
+  </div>
+
+  <div class="wrap body">
+        <p>Two headlines ran this month that seem to contradict each other. A Census Bureau
+    working paper linked college majors to actual employment records and found the most
+    AI-exposed graduates, computer science and programming leading the list, facing delayed
+    employment, real earnings declines, and a shift toward lower-paying work after ChatGPT's
+    release. Around the same time, Nvidia's Jensen Huang sat down with the New York Times'
+    <a href="https://www.nytimes.com/2026/09/23/opinion/ezra-klein-podcast-jensen-huang.html" target="_blank" rel="noopener">Ezra Klein</a>
+    and rejected the idea that AI eliminates jobs, arguing instead that it usually changes a
+    job's tasks while leaving its purpose intact. He drew the line himself: a job's goal and a
+    job's tasks aren't the same thing, and conflating them is where most predictions about AI
+    and work go wrong.</p>
+
+    <p>Both men are citing real evidence. Neither is telling the whole story, because "is AI
+    taking jobs" isn't a yes-or-no question. It's a sorting question, and the sort turns out to
+    be predictable in advance.</p>
+
+    <p>Take radiology, which Huang used as his own example. A decade ago, Geoffrey Hinton told
+    the field to stop training radiologists, certain AI would replace them within five years.
+    The opposite happened. Radiologist salaries have climbed past half a million dollars,
+    postings sit open for months, and the country faces a shortage running into the tens of
+    thousands by 2033. AI got very good at reading a scan. It never touched the rest of the
+    job: the procedures, the judgment on an atypical case, the conversation with a frightened
+    patient, the name attached to a diagnosis that carries legal weight if it's wrong. Reading
+    the scan was a task inside radiology. It was never the whole vocation.</p>
+
+    <p>Now take junior software developers, the group the Census data shows getting hit
+    hardest. The task that used to belong to a first-year engineer, boilerplate code, routine
+    bug fixes, a first-pass draft, was never separate from the job the way reading a scan is
+    separate from being a radiologist. For a junior developer, the task and the job were close
+    to the same thing. AI didn't automate a slice of the role. It automated most of what the
+    role was.</p>
+
+    <p>That's the actual diagnostic, and it holds up past these two cases. A job compresses
+    when its tasks overlap almost completely with what a model can now do, when the people who
+    could do it are in easy supply, when demand for the output isn't growing fast enough to
+    absorb the efficiency gain, and when nobody has to be legally or professionally accountable
+    for the result. A job expands, or at minimum holds, when a real gap remains between the
+    task and the job's purpose, when supply is constrained, when demand keeps outpacing what AI
+    can satisfy, and when someone has to be the named, liable party standing behind the
+    outcome.</p>
+
+    <p>A third pattern shows what happens in between, and it matters because it's the one most
+    white-collar work actually resembles. Field studies of customer service agents, including a
+    large one inside Alibaba, found AI narrowing the gap between low and high performers rather
+    than eliminating either group. The tool distributed what the best agents already knew, and
+    turnover fell along with it. That's neither compression nor pure expansion. It's leveling,
+    and it shows up where task-goal overlap is high but demand isn't fixed and nobody's liable
+    for a wrong customer service answer the way someone's liable for a wrong diagnosis. The same
+    variables that explain radiology and junior developers predict this third outcome correctly,
+    which is a better test of a framework than two cases that happen to fit it.</p>
+
+    <p>Worth saying plainly what would break this. A high-liability, supply-constrained role
+    getting automated away anyway would be the disconfirming case, and it hasn't shown up yet.
+    That's a claim worth watching, not a guarantee.</p>
+
+    <p>Huang's own example is worth running back through his framework, because it doesn't
+    survive the check. He named phone-based customer support as a job where goal and task
+    overlap enough to be automated outright. But that's the leveling case, not the elimination
+    case: the field data shows productivity gains and lower attrition, not replacement, because
+    demand for support isn't fixed and even a scripted job carries enough judgment, when to
+    break script, when to escalate, to keep goal and task from fully collapsing into each other.
+    Even the person who articulated this framework doesn't always apply it to his own examples.
+    That's not a knock on the framework. It's what checking a claim looks like instead of just
+    citing it.</p>
+
+    <p>The part of this that matters most for a university sits inside the junior-developer
+    case, and it's bigger than software. The tasks AI eats first, boilerplate code, first-draft
+    writing, routine data work, were historically the tasks a junior person did while a senior
+    person supervised them into competence. That supervised repetition was the training
+    mechanism, not busywork on the way to a real job. It was how someone became good enough to
+    do the real job. If AI absorbs the repetition, the apprenticeship doesn't get more
+    efficient. It disappears, and nothing has replaced it yet. That reframes "how do we prepare
+    students" from a curriculum question into an infrastructure question: the university has to
+    build formation on purpose, in the room, because the informal version that used to happen on
+    someone's first job is closing.</p>
+
+    <p>Huang is betting a new kind of engineer fills that gap, students training alongside
+    agentic tools now who graduate around 2028 into roles built on verifying and directing what
+    the agents produce rather than writing code by hand. A live version of that bet is already
+    running, two years ahead of his own timeline. A junior at a regional university spent this
+    past summer building agentic workflows and automation processes for a local employer, work
+    nobody on staff had the bandwidth to build otherwise, and the company kept them on through
+    the school year.</p>
+
+    <p>There's a structural version of this same shift worth stating on its own terms, separate
+    from anything attributed to Huang directly. Agentic tools and low-code interfaces collapse a
+    translation step that used to define technical work: a domain expert explaining a problem to
+    a separate technical person, who then had to relearn the domain well enough to build the
+    right thing. The intern's workflow didn't route through a company IT department. It came
+    directly from someone who already held the context, who knew which exceptions mattered and
+    what "trustworthy" meant for that specific process. Building starts moving down into every
+    function this way, not because everyone becomes a trained engineer, but because the tool
+    removes the need for a separate technical intermediary between a problem and its fix. What
+    doesn't move down is the layer above it: who verifies the thing built this way is safe to
+    run against real data, and who's willing to be the accountable party if it's wrong. Building
+    democratizes. Accountability doesn't. That's the sharper version of the verification-engineer
+    bet, and it's one the intern example already supports on its own.</p>
+
+    <p>There's a wrinkle underneath all of it, specific to a labor-short region. National data
+    on AI-exposed graduates measures compression, more people competing for fewer entry slots.
+    In a county short on workers generally, this student may not be winning a slot someone else
+    lost. They may be filling a rung that was sitting empty, because nobody available had the
+    skill to build it at all. That's a different story than the Census data tells, and neither
+    Huang's optimism nor the Census's caution is built to say anything about it.</p>
+
+    <p>None of this is reassurance, and it isn't supposed to be. Students don't need to be told
+    it'll be fine. They need the diagnostic: which jobs compress, which expand, which get
+    leveled, and which of the variables they can actually go build inside themselves before they
+    pick a major.</p>
+  </div>
+
+  <!-- THE PROMPT — the paired half the channels can't carry -->
+  <div class="wrap prompt-wrap">
+    <div class="prompt-lead">The prompt</div>
+        <div class="body">
+      <p>Run your own major or role through the same four variables before taking anyone's optimism or pessimism about AI and work at face value, yours or Huang's or the Census Bureau's.</p>
+    </div>
+
+    <div class="promptcard">
+      <div class="bar"><span class="label"><span class="caret">▸</span> the sorting test</span><button class="copybtn" type="button" data-copy="p1">Copy</button></div>
+<pre id="p1">I want to evaluate a career path or job role against AI exposure, using
+a structural framework instead of general optimism or pessimism.
+
+The role I want evaluated: [describe the job, industry, or major]
+
+Walk through it against these four variables and give me a clear read
+on each:
+
+1. Task-versus-job overlap: does the day-to-day task list make up
+   nearly all of what the role delivers, or is there a meaningful gap
+   between the tasks and the role&#x27;s actual purpose (judgment,
+   relationship, accountability, physical presence)?
+
+2. Supply elasticity: is entry into this role capped by licensing,
+   credentialing, or a fixed training pipeline, or can supply expand
+   quickly if demand or wages rise?
+
+3. Demand elasticity: if AI makes the core task faster or cheaper,
+   does total demand for the output grow to absorb the gain, or is
+   demand roughly fixed regardless of how fast the task can be done?
+
+4. Liability and accountability: does someone have to be the named,
+   legally or professionally responsible party for the outcome, in a
+   way that can&#x27;t be assigned to a system?
+
+Based on the answers, tell me plainly whether this role looks like the
+compressing pattern, the expanding pattern, or the leveling pattern
+(narrowing the gap between weak and strong performers rather than
+eliminating the role). Then tell me what would have to change to move
+it, and what specific skill or credential would do the most to shift
+it toward the expanding side.</pre>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      
+      <p class="foot-fine"><em>John Andrews teaches at Lenoir-Rhyne University and writes Prompted.daily, a publication about thinking well with AI. He lives in Catawba County, North Carolina.</em></p>
+      <p class="foot-fine"><a href="/">← Prompted.daily</a> · <a href="https://x.com/prompteddaily" target="_blank" rel="noopener">X</a> · © <span id="yr"></span></p>
+    </div>
+  </footer>
+</article>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = document.getElementById(btn.getAttribute('data-copy'));
+      if(!pre) return;
+      navigator.clipboard.writeText(pre.innerText).then(function(){
+        var t = btn.textContent; btn.textContent = 'Copied ✓'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = t; btn.classList.remove('done'); }, 1900);
+      }).catch(function(){ btn.textContent = 'Select + copy'; });
+    });
+  });
+</script>
+</body>
+</html>
