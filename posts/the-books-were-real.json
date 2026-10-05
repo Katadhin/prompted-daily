@@ -33,5 +33,10 @@
       "html": "<p>The second prompt only works if the last answer is honest. A condition you can't observe is a mood, not a position.</p>"
     }
   ],
-  "card_blurb": "A viral post says AI companies are shredding rare books. The record confirms the destruction, not the rarity, and the law and the instinct point opposite ways."
+  "card_blurb": "A viral post says AI companies are shredding rare books. The record confirms the destruction, not the rarity, and the law and the instinct point opposite ways.",
+  "hero_image": {
+    "alt": "A lone figure seen from behind at a long reading-room table at night, one amber lamp lighting an open book, with a pale cutaway below the floor showing stacked pallets of loose pages beside a cutting machine.",
+    "caption": "One whole book above the floor, cut pages beneath it. Illustration generated with Gemini."
+  },
+  "card_thumb_alt": "A figure at a reading-room table beside an amber lamp and open book, with stacked loose pages and a cutting machine in a cutaway beneath the floor."
 }
