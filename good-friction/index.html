@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What the Sandwich Was For — Prompted.daily</title>
+<meta name="description" content="A squeeze bottle of Dijon holds almost twice the mustard for the same price. The convenience was never the point. It was the cost reduction, and the endpoint it quietly shrank." />
+
+<!-- Canonical points HERE: the site is the original, Medium is the syndicated copy. -->
+<link rel="canonical" href="https://prompteddaily.com/good-friction/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What the Sandwich Was For" />
+<meta property="og:description" content="The squeeze bottle was never about sparing your wrist. It was about cost, and the endpoint it quietly redrew one notch too small." />
+<meta property="og:site_name" content="Prompted.daily" />
+<meta property="og:url" content="https://prompteddaily.com/good-friction/" />
+<meta property="og:image" content="https://prompteddaily.com/good-friction/header.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What the Sandwich Was For" />
+<meta name="twitter:description" content="The squeeze bottle was never about sparing your wrist. It was about cost, and the endpoint it quietly redrew one notch too small." />
+<meta name="twitter:image" content="https://prompteddaily.com/good-friction/header.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23E8A33D'/%3E%3C/svg%3E" />
+
+<style>
+  :root{
+    --navy:#16162b; --navy-deep:#101024;
+    --ivory:#ECE6D8; --ivory-soft:#E6E0D2; --ivory-dim:#8f8fa6;
+    --amber:#E8A33D; --hairline:rgba(236,230,216,.10); --hairline-2:rgba(236,230,216,.06);
+    --serif:"Fraunces",Georgia,serif;
+    --read:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; color:var(--ivory);
+    background:radial-gradient(120% 70% at 50% -8%, #1c1c38 0%, var(--navy) 46%, var(--navy-deep) 100%);
+    background-attachment:fixed;
+    font-family:var(--read); font-size:19px; line-height:1.72;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{ color:inherit; }
+  .wrap{ width:100%; max-width:720px; margin:0 auto; padding:0 26px; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); }
+
+  header.nav{ position:sticky; top:0; z-index:50; background:rgba(16,16,36,.72);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--hairline-2); }
+  .nav-inner{ width:100%; max-width:1080px; margin:0 auto; padding:0 26px; height:64px;
+    display:flex; align-items:center; justify-content:space-between; }
+  .wordmark{ font-family:var(--serif); font-weight:900; font-size:21px; color:var(--ivory);
+    display:inline-flex; align-items:baseline; letter-spacing:-.01em; }
+  .wordmark .dot{ color:var(--amber); } .wordmark .daily{ font-weight:600; }
+  .wordmark-img{ height:26px; width:auto; display:block; }
+  .back{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .back:hover{ color:var(--ivory); }
+  .back::before{ content:"← "; color:var(--amber); }
+
+  article{ padding:70px 0 40px; }
+  .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); }
+  h1{ font-family:var(--serif); font-weight:900; font-size:clamp(34px,5.4vw,54px); line-height:1.05;
+    letter-spacing:-.02em; margin:16px 0 0; }
+  .dek{ font-family:var(--read); font-style:italic; font-size:20px; color:var(--ivory-soft);
+    margin:20px 0 0; line-height:1.5; }
+  .byline{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); margin:26px 0 0;
+    display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .byline .amber{ color:var(--amber); }
+  .rule{ height:1px; background:var(--hairline); margin:34px 0 6px; }
+  .hero-img{ width:100%; display:block; border-radius:6px; border:1px solid var(--hairline); margin:30px 0 0; }
+  .hero-cap{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); line-height:1.5; margin:10px 0 0; }
+
+  .body > p{ margin:24px 0; }
+  .body h2{ font-family:var(--serif); font-weight:600; font-size:clamp(23px,3.4vw,30px);
+    letter-spacing:-.01em; margin:52px 0 8px; line-height:1.15; }
+  .body em{ font-style:italic; color:var(--ivory-soft); }
+  .body strong{ font-weight:600; color:var(--ivory); }
+  .body a{ color:var(--amber); text-decoration:underline; text-underline-offset:2px; }
+  .body a:hover{ color:var(--ivory); }
+
+  blockquote{ margin:34px 0; padding:4px 0 4px 24px; border-left:2px solid var(--amber);
+    font-family:var(--serif); font-weight:600; font-size:22px; line-height:1.4; color:var(--ivory); font-style:normal; }
+  blockquote.plain{ font-family:var(--read); font-weight:500; font-style:italic; font-size:20px; color:var(--ivory-soft); }
+
+  .prompt-wrap{ margin:56px 0 8px; }
+  .prompt-lead{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:14px; }
+  .promptcard{ border:1px solid var(--hairline); border-radius:6px; overflow:hidden; margin:18px 0;
+    background:linear-gradient(180deg, rgba(232,163,61,.05), transparent 42%); }
+  .promptcard .bar{ display:flex; align-items:center; justify-content:space-between; padding:11px 15px;
+    border-bottom:1px solid var(--hairline); font-family:var(--mono); font-size:12px; color:var(--ivory-dim); letter-spacing:.03em; }
+  .promptcard .bar .label{ display:flex; align-items:center; gap:9px; }
+  .promptcard .bar .caret{ color:var(--amber); }
+  .copybtn{ font-family:var(--mono); font-size:12px; background:transparent; border:1px solid var(--hairline);
+    color:var(--ivory); padding:6px 12px; border-radius:3px; cursor:pointer; transition:border-color .18s,color .18s; }
+  .copybtn:hover{ border-color:var(--amber); color:var(--amber); }
+  .copybtn.done{ border-color:var(--amber); color:var(--amber); }
+  .promptcard pre{ margin:0; padding:20px 18px; font-family:var(--mono); font-size:13.5px; line-height:1.72;
+    color:var(--ivory); white-space:pre-wrap; overflow-x:auto; }
+  .promptcard pre .amber{ color:var(--amber); }
+
+  footer{ border-top:1px solid var(--hairline-2); margin-top:56px; padding:34px 0 60px; }
+  .syndicate{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .syndicate a{ color:var(--amber); }
+  .foot-fine{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); margin-top:22px; }
+  .foot-fine a{ color:var(--ivory-dim); } .foot-fine a:hover{ color:var(--amber); }
+
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark" aria-label="Prompted.daily home"><img class="wordmark-img" src="/img/wordmark.png" alt="Prompted.daily" /></a>
+    <a href="/#read" class="back">All stories</a>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <span class="kicker">Convenience · Friction</span>
+    <h1>What the Sandwich Was For</h1>
+    <p class="dek">Convenience rarely argues that what you lost was worthless. It just quietly redraws what you were doing until the loss stops counting.</p>
+    <div class="byline"><span>By <span class="amber">John Andrews</span></span><span>·</span><span>Prompted.daily</span><span>·</span><span>9 min read</span><span>·</span><span>October 17, 2026</span></div>
+    <figure style="margin:0;">
+      <img class="hero-img" src="header.jpg" alt="An open jar of Dijon mustard labeled Good Friction on a wooden kitchen counter, a knife resting across the open rim with a smear of mustard on the blade, a slice of sourdough beside it in soft morning light." />
+      <figcaption class="hero-cap">Good Friction, stone-ground. The jar open, the knife in. Image generated with Gemini.</figcaption>
+    </figure>
+    <div class="rule"></div>
+  </div>
+
+  <div class="wrap body">
+        <p>The squeeze bottle met me at the fridge door. Grey Poupon, now in a plastic yield-to-pressure format, one hand, no twist, no knife if you don&rsquo;t want one. More convenient by every measure anyone would write down. And the sandwich came out a little hollow, in a way that has nothing to do with mustard.</p>
+
+    <p>Worth being precise about what left, because &ldquo;making a sandwich felt better in the old days&rdquo; is not an argument, it&rsquo;s a mood. The jar held a short sequence of small authored acts. Unscrew the lid. Pick the knife. Dip, judge the amount, spread, read the bread, go back for more. Each step is a place where you make a choice and leave a mark, and the sandwich comes out a little bit yours. The bottle collapses the whole sequence into one gesture. What the bottle removed was not the labor. Labor is a cost, and nobody mourns a cost. What it removed was the surface area where you were the author.</p>
+
+    <h2>The cost underneath the convenience</h2>
+
+    <p>My wife caught the rest of it at dinner. The squeeze bottle holds almost twice the mustard for the same price. Sit with that, because it rearranges the whole story. The bottle was not built to spare my wrist. It ships lighter than glass, it does not shatter, it fills faster on the line, it stacks more product per pallet, and every one of those is a cost pulled out of somebody&rsquo;s supply chain. The convenience was the wrapping. The cost reduction was the real gift, and the gift went to the people who make the mustard, not to me. What got sold to me as my friction removed was, underneath, their cost removed, handed back with a bow on it and the word value.</p>
+
+    <p>I know how the bow gets tied, because I used to tie it. A long stretch of my career ran inside this machine, in rooms where the work was to find the cost worth taking out and the story worth telling about why its removal was a kindness to the shopper. We were good at it. I believed most of it. Standing at my own refrigerator now, holding the output of a process I used to run, I am rethinking a fair amount of it.</p>
+
+    <p>None of which makes cheaper a crime. Cheaper insulin removed a gate and formed nothing worth keeping, and thank God for it. The tell is not the lower price. The tell is when the only way to reach it was to shrink the thing itself, past the part that was doing the forming. Insulin got cheaper without becoming less insulin. The sandwich got cheaper by quietly becoming less of a thing I made.</p>
+
+    <h2>Friction that forms, friction that gates</h2>
+
+    <p>Hold all of this away from nostalgia before it curdles into it, because most friction deserves exactly the death it got. A woman in 1965 needing her husband&rsquo;s signature to open a bank account. A flight of stairs in front of a wheelchair. Driving across town to look up one fact. None of that built anything. It only stood in the way and sorted people by who could afford to push through. So friction is not sacred, and anyone defending it in general is defending the signature law by accident. The friction worth a second look is the narrow kind that makes something in you as a byproduct of the resistance. Call it the difference between friction that forms and friction that merely gates. The jar forms, a little. The signature law only gated. Any honest version of this argument lives or dies on keeping those two apart.</p>
+
+    <p>The engine is not any single removal. It&rsquo;s the ratchet. Once the squeeze bottle exists, the jar stops being neutral and starts feeling like an imposition it never used to be. Each convenience resets the floor, so the next bit of friction reads as unacceptable. The real loss is not the jar. It&rsquo;s becoming a person for whom the jar is too much. Convenience doesn&rsquo;t only remove friction, it lowers your tolerance for friction, and that tolerance was load-bearing for most of what forms a person.</p>
+
+    <p>The bottle is small. The pattern is not. Reading a paper map builds a model in your head: you know north, you know the river is on your left, you know the town sits in a bowl. Turn-by-turn navigation hands you an instruction stream and you arrive having built nothing, which is why people cannot draw the city they have lived in for a decade. That is still authorship friction, the mark left on you instead of on the sandwich. Getting lost is a different animal, and a sharper one. The map at least had a destination. Getting lost has none, and that is the point. You find the street you would never have routed to, the afternoon that happened only because the plan broke. Optimization is a machine for giving you more of what you already value. Getting lost is one of the last ways to collide with what you didn&rsquo;t yet know existed, and you cannot specify it in advance, because the moment you can, it becomes a destination and the machine takes you straight there and the thing evaporates.</p>
+
+    <p>Then there is the oldest case, the one every person who has learned anything hard already knows in their hands. The struggle to understand is not the obstacle to understanding. The struggle is the understanding, happening. Hand someone the answer before the wrestling and you have not sped the learning up, you have deleted it, and left a person who can recognize the solution and reproduce none of it. Cognitive psychologists have a blunt name for this, desirable difficulty, the difficulty that feels like failing while it is in fact working. Fluency feels like learning and does nothing. Struggle feels like drowning and builds the whole thing.</p>
+
+    <p>Three objects, three ways friction forms: the mark you leave, the thing you meet, the capacity you build. And a market that removes all of it at once, because it cannot tell forming from gating and prices both at zero.</p>
+
+    <h2>A test you can carry</h2>
+
+    <p>So here is a test. Take the friction away and let the endpoint arrive anyway. If nothing is missing, the friction only gated you, and good riddance. If the value leaves with the effort, then the effort was the value. Teleport past the signature law and your bank account is there, whole. Gate. Teleport past the map and you arrive without the city in your head, because the city only ever got built in the navigating. Teleport past getting lost and you arrive on time, which is the one thing that kills it. Teleport past the struggle and you hold the right answer with no understanding behind it. In the first case the effort stood between you and the outcome. In the rest, the effort was the outcome, wearing a disguise.</p>
+
+    <p>The test has a moving part, and the moving part is the whole game. Name the endpoint narrowly and every friction on earth becomes a gate. The squeeze bottle is sold as &ldquo;mustard on bread,&rdquo; and against that endpoint it is telling the plain truth: nothing lost, the bottle wins, only a sentimental fool keeps the jar. The map is sold as &ldquo;arrive at the address.&rdquo; The struggle is sold as &ldquo;produce the correct answer.&rdquo; The market does not remove friction against your true endpoint. It first redefines your endpoint down to the narrowest version that still sounds like what you wanted, and then, against that version, it is not lying. The loss is real and the sales pitch is honest at the same time, because they are measuring two different things and only one of them got said out loud. Convenience wins the argument by quietly choosing the terms of it, one notch too small, every time, in a way that feels like precision rather than theft.</p>
+
+    <blockquote>The narrowing has a motive, not just a habit. You shrink the endpoint because the shrunken one is the version you can deliver for less. Cost reduction is the engine. The small endpoint is how it travels.</blockquote>
+
+    <h2>The oldest pattern, the newest tool</h2>
+
+    <p>None of this is new, which is the reassuring part and the alarming part. The philosopher Albert Borgmann named the pattern in 1984. He called it <a href="https://iep.utm.edu/borgmann/" target="_blank" rel="noopener">the device paradigm</a>: a device delivers the commodity a thing used to provide, while hiding the engagement the thing used to demand, and he warned that as devices spread, the things that centered a life get converted into conveniences one by one. The jar is a thing. The bottle is a device. He saw the whole argument coming before the internet existed.</p>
+
+    <p>What is new is the limit case. A squeeze bottle redefines one endpoint and moves on. AI redefines the endpoint of thinking itself, which is the most redefinable thing you own, because you cannot watch your own mind from outside to check what got amputated. Ask it and it hands you the answer, and &ldquo;the answer&rdquo; is the narrow endpoint. The wider one, the judgment you would have built sitting lost in the problem for an hour, never gets named, so you never notice you traded it. Researchers at MIT ran the experiment this year, watching people write with and without an AI assistant, and the finding that matters is not that the assisted essays were worse. It is that the people who leaned on the tool first carried a deficit even after it was taken away, a thing the researchers called cognitive debt. Struggle first, then tool, and you gain. Tool first, then struggle, and you are in debt you cannot see. The order of operations is the entire difference, and the convenient order is the wrong one.</p>
+
+    <p>The feeling is in the air right now. A writer named Kathryn Jezer-Morton gave it a handle last winter, &ldquo;friction-maxxing,&rdquo; choosing the slower version on purpose, and it struck a nerve because people already felt the narrowing. The country&rsquo;s biggest politics podcast spent this week on whether we should love our chatbots, and Ezra Klein kept circling back to one word. He put it flatly: friction is intrinsic to the relationships between human beings. He told a story about his own friendless adolescence, years of grinding against a social world that made no sense to him, years he hated, and said he is no longer sure that friction was not the thing that formed him.</p>
+
+    <p>Here is the turn, and it is the one that matters, because it is not a counsel of refusal. The same tool that will frictionlessly agree with you will also, if you aim it that way, refuse you. Klein said the most useful thing his AI ever did was tell him a plan was insane and point out that all he ever does is claim he&rsquo;s too busy, meaner than a friend would have been. The frictionless chatbot and the one that pushes back are the same technology pointed at two different endpoints. Which means the fork was never the tool. It was the endpoint, and the endpoint is the one thing the machine cannot be trusted to set, because the market behind it has every reason to set it small.</p>
+
+    <h2>At the fridge</h2>
+
+    <p>Which leaves you where you started, at the open fridge, bottle in hand. You can take the convenience. Nobody is coming to confiscate the squeeze bottle, and choosing the jar as a lifestyle is its own theater, available mostly to people with time to spare. The only move left that holds is smaller and harder than choosing the jar. Before you accept the convenience, name the endpoint yourself, the real one, the wide one, before someone with a balance sheet names it for you one notch too small. They will, because I was once the someone. No product will do it for you. Every system you own is tuned so you never notice it needs doing. Take the bottle if you want. Just be the one who decided what the sandwich was for.</p>
+  </div>
+
+  <!-- THE PROMPT — the paired half the channels can't carry -->
+  <div class="wrap prompt-wrap">
+    <div class="prompt-lead">The prompt</div>
+        <div class="body">
+      <p>Pick an idea you believe but have not earned yet. Give the AI your real example, the small concrete thing, not the abstraction, and then let it try to take the idea apart. The goal is not a draft. The goal is finding out whether you have an argument or just a mood.</p>
+    </div>
+
+    <div class="promptcard">
+      <div class="bar"><span class="label"><span class="caret">▸</span> break my idea</span><button class="copybtn" type="button" data-copy="p1">Copy</button></div>
+<pre id="p1">Act as a skeptical essayist who takes my idea seriously enough to try
+to break it. I want to defend something I half-believe but cannot yet
+prove: [state your claim in one sentence].
+
+First, ask me for the one concrete example that made me believe it.
+Wait for my answer before going on.
+
+Then stop helping me decorate the idea and start stress-testing it.
+Find the strongest objection a sharp reader would raise. Show me where
+my own example works against me. Call it out if I am romanticizing the
+past, generalizing from a single case, or quietly relying on privilege
+the argument cannot afford. Give me the counter-case, not the compliment.
+
+Keep pushing until I can state, in one sentence, the discriminating
+test that sorts the cases I am defending from the cases I would concede.
+Do not let me off early.
+
+End by telling me which essay this actually wants to be, descriptive or
+prescriptive, and what it will cost me to say the real version out loud.</pre>
+    </div>
+
+    <div class="body">
+      <p>What comes back is not an essay. It is the one sentence you could not write on your own, the test that tells your forming friction from your gating friction, or whatever the equivalent line is for your idea. The squeeze bottle on the label started exactly here.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      
+      <p class="foot-fine"><em>John Andrews teaches at Lenoir-Rhyne University and writes Prompted.daily, a publication about thinking well with AI. He lives in Catawba County, North Carolina.</em></p>
+      <p class="foot-fine"><a href="/">← Prompted.daily</a> · <a href="https://x.com/prompteddaily" target="_blank" rel="noopener">X</a> · © <span id="yr"></span></p>
+    </div>
+  </footer>
+</article>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = document.getElementById(btn.getAttribute('data-copy'));
+      if(!pre) return;
+      navigator.clipboard.writeText(pre.innerText).then(function(){
+        var t = btn.textContent; btn.textContent = 'Copied ✓'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = t; btn.classList.remove('done'); }, 1900);
+      }).catch(function(){ btn.textContent = 'Select + copy'; });
+    });
+  });
+</script>
+</body>
+</html>
