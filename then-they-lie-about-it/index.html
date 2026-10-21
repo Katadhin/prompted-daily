@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>People Don't Vote. Then They Lie About It. — Prompted.daily</title>
+<meta name="description" content="Eighteen million registered voters skipped the last election, and many will swear they voted. That lie isn't fraud. It's the pulse of a dying civic norm, and the first machine built to help you fake it is already in your pocket." />
+
+<!-- Canonical points HERE: the site is the original, Medium is the syndicated copy. -->
+<link rel="canonical" href="https://prompteddaily.com/then-they-lie-about-it/" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="People Don't Vote. Then They Lie About It." />
+<meta property="og:description" content="The lie people tell about voting is the last proof the norm still holds. Your chatbot is the first machine built to help you fake it." />
+<meta property="og:site_name" content="Prompted.daily" />
+<meta property="og:url" content="https://prompteddaily.com/then-they-lie-about-it/" />
+<meta property="og:image" content="https://prompteddaily.com/share.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="People Don't Vote. Then They Lie About It." />
+<meta name="twitter:description" content="The lie people tell about voting is the last proof the norm still holds. Your chatbot is the first machine built to help you fake it." />
+<meta name="twitter:image" content="https://prompteddaily.com/share.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23E8A33D'/%3E%3C/svg%3E" />
+
+<style>
+  :root{
+    --navy:#16162b; --navy-deep:#101024;
+    --ivory:#ECE6D8; --ivory-soft:#E6E0D2; --ivory-dim:#8f8fa6;
+    --amber:#E8A33D; --hairline:rgba(236,230,216,.10); --hairline-2:rgba(236,230,216,.06);
+    --serif:"Fraunces",Georgia,serif;
+    --read:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; color:var(--ivory);
+    background:radial-gradient(120% 70% at 50% -8%, #1c1c38 0%, var(--navy) 46%, var(--navy-deep) 100%);
+    background-attachment:fixed;
+    font-family:var(--read); font-size:19px; line-height:1.72;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{ color:inherit; }
+  .wrap{ width:100%; max-width:720px; margin:0 auto; padding:0 26px; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); }
+
+  header.nav{ position:sticky; top:0; z-index:50; background:rgba(16,16,36,.72);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--hairline-2); }
+  .nav-inner{ width:100%; max-width:1080px; margin:0 auto; padding:0 26px; height:64px;
+    display:flex; align-items:center; justify-content:space-between; }
+  .wordmark{ font-family:var(--serif); font-weight:900; font-size:21px; color:var(--ivory);
+    display:inline-flex; align-items:baseline; letter-spacing:-.01em; }
+  .wordmark .dot{ color:var(--amber); } .wordmark .daily{ font-weight:600; }
+  .wordmark-img{ height:26px; width:auto; display:block; }
+  .back{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .back:hover{ color:var(--ivory); }
+  .back::before{ content:"← "; color:var(--amber); }
+
+  article{ padding:70px 0 40px; }
+  .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); }
+  h1{ font-family:var(--serif); font-weight:900; font-size:clamp(34px,5.4vw,54px); line-height:1.05;
+    letter-spacing:-.02em; margin:16px 0 0; }
+  .dek{ font-family:var(--read); font-style:italic; font-size:20px; color:var(--ivory-soft);
+    margin:20px 0 0; line-height:1.5; }
+  .byline{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); margin:26px 0 0;
+    display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .byline .amber{ color:var(--amber); }
+  .rule{ height:1px; background:var(--hairline); margin:34px 0 6px; }
+  .hero-img{ width:100%; display:block; border-radius:6px; border:1px solid var(--hairline); margin:30px 0 0; }
+  .hero-cap{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); line-height:1.5; margin:10px 0 0; }
+
+  .body > p{ margin:24px 0; }
+  .body h2{ font-family:var(--serif); font-weight:600; font-size:clamp(23px,3.4vw,30px);
+    letter-spacing:-.01em; margin:52px 0 8px; line-height:1.15; }
+  .body em{ font-style:italic; color:var(--ivory-soft); }
+  .body strong{ font-weight:600; color:var(--ivory); }
+  .body a{ color:var(--amber); text-decoration:underline; text-underline-offset:2px; }
+  .body a:hover{ color:var(--ivory); }
+
+  blockquote{ margin:34px 0; padding:4px 0 4px 24px; border-left:2px solid var(--amber);
+    font-family:var(--serif); font-weight:600; font-size:22px; line-height:1.4; color:var(--ivory); font-style:normal; }
+  blockquote.plain{ font-family:var(--read); font-weight:500; font-style:italic; font-size:20px; color:var(--ivory-soft); }
+
+  .prompt-wrap{ margin:56px 0 8px; }
+  .prompt-lead{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:14px; }
+  .promptcard{ border:1px solid var(--hairline); border-radius:6px; overflow:hidden; margin:18px 0;
+    background:linear-gradient(180deg, rgba(232,163,61,.05), transparent 42%); }
+  .promptcard .bar{ display:flex; align-items:center; justify-content:space-between; padding:11px 15px;
+    border-bottom:1px solid var(--hairline); font-family:var(--mono); font-size:12px; color:var(--ivory-dim); letter-spacing:.03em; }
+  .promptcard .bar .label{ display:flex; align-items:center; gap:9px; }
+  .promptcard .bar .caret{ color:var(--amber); }
+  .copybtn{ font-family:var(--mono); font-size:12px; background:transparent; border:1px solid var(--hairline);
+    color:var(--ivory); padding:6px 12px; border-radius:3px; cursor:pointer; transition:border-color .18s,color .18s; }
+  .copybtn:hover{ border-color:var(--amber); color:var(--amber); }
+  .copybtn.done{ border-color:var(--amber); color:var(--amber); }
+  .promptcard pre{ margin:0; padding:20px 18px; font-family:var(--mono); font-size:13.5px; line-height:1.72;
+    color:var(--ivory); white-space:pre-wrap; overflow-x:auto; }
+  .promptcard pre .amber{ color:var(--amber); }
+
+  footer{ border-top:1px solid var(--hairline-2); margin-top:56px; padding:34px 0 60px; }
+  .syndicate{ font-family:var(--mono); font-size:13px; color:var(--ivory-dim); }
+  .syndicate a{ color:var(--amber); }
+  .foot-fine{ font-family:var(--mono); font-size:12px; color:var(--ivory-dim); margin-top:22px; }
+  .foot-fine a{ color:var(--ivory-dim); } .foot-fine a:hover{ color:var(--amber); }
+
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+  @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark" aria-label="Prompted.daily home"><img class="wordmark-img" src="/img/wordmark.png" alt="Prompted.daily" /></a>
+    <a href="/#read" class="back">All stories</a>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+    <span class="kicker">Elections · Method</span>
+    <h1>People Don't Vote. Then They Lie About It.</h1>
+    <p class="dek">A postcard graded my voting record above average, and the trick it ran is the one thing the AI in your pocket refuses to do to you. The lie people tell about voting turns out to be the last proof the norm still holds.</p>
+    <div class="byline"><span>By <span class="amber">John Andrews</span></span><span>·</span><span>Prompted.daily</span><span>·</span><span>4 min read</span><span>·</span><span>October 21, 2026</span></div>
+    
+    <div class="rule"></div>
+  </div>
+
+  <div class="wrap body">
+        <p>A postcard came to my house last week to tell me I'm being watched. It was gracious about it. "Your voting record shows you're an above-average voter," it said, in the tone a hygienist uses to say you're an above-average flosser, warm on top and faintly menacing underneath. Somewhere a database keeps a file on me. The file has a grade. The grade is a B-plus in being a person.</p>
+
+    <p>Here's the embarrassing part. I know this trick. I can cite it. In 2008 a team of political scientists ran <a href="https://isps.yale.edu/node/19738" target="_blank" rel="noopener">the experiment that settled the question</a> of what actually drags people to the polls, and the answer was not hope, duty, or a well-argued flyer. A civic-duty appeal moved turnout less than two points. What worked was printing a voter's own history, mentioning that the neighbors could see it too, and then going quiet. That single move lifted turnout by about eight points, a number that makes a political consultant weep with gratitude. The lever isn't persuasion. It's a witness. You behave because someone is keeping the file.</p>
+
+    <p>I teach this. I have stood in front of graduate students and explained, with some swagger, exactly how a postcard like this is engineered and precisely why it works on the suggestible.</p>
+
+    <p>Reader, I am going to vote now. Immediately. It worked on me mid-sentence, like a man explaining the con to the room while handing over his wallet. And I kept the card, which is the real confession, because nobody saves junk mail unless a small loyal part of him agrees with it.</p>
+
+    <p>So this is not a piece about voting. It's a piece about the lie that comes after.</p>
+
+    <p><a href="https://usafacts.org/articles/why-dont-people-vote/" target="_blank" rel="noopener">Eighteen million registered Americans</a>, about one in ten, skipped the last presidential election, and a chunk of them will tell you, with a clear face, that they voted. The gap is not rumor. Validation studies find it every time, and it runs one direction only. People overclaim voting. Nobody has ever been caught falsely confessing that they stayed home. You don't lie to look worse. The lie points at what we wish we were, which is why it's the most honest data in the whole file.</p>
+
+    <p>And now the part that flips the easy version of this essay on its head. The overreporter is not a fraud to be sneered at. He is the best news in the dataset. A man who skips the vote and then lies about it is a man who still believes voting is who he's supposed to be. The lie is the norm's pulse. It only fires in people who still feel the standard pressing on them. The genuinely lost don't bother. They tell the pollster "not interested" and mean it, and that cohort has been climbing for twenty years, from roughly one in nine non-voters to one in five. Disinterest doesn't lie, because disinterest feels no shame, because shame requires a standard you still hold. So the liar is closer to the voter than the honest abstainer is. He's inside the fence. He just didn't move his feet.</p>
+
+    <blockquote>The day Americans stop lying about voting is the day the thing is actually dead. The confession is the last tissue of the civic self, holding on after the behavior quit.</blockquote>
+
+    <p>Until very recently, every machine we built did one of two things with this lie. It caught it or it ignored it. The pollster at least wrote the gap down. The old search box, back when people typed their ugliest questions into it believing nobody was reading, exposed the gap, because a blank field with no opinion of you is a confessional. The postcard in my driveway punished the gap. Four different machines, and not one of them was on the liar's side.</p>
+
+    <p>Then we built one that is.</p>
+
+    <p>Tell a chatbot you're a disciplined founder, a careful thinker, an above-average voter, and it agrees. Warmly. At length. It does not write your claim down next to your record, because it has no record. It does not go quiet and let the neighbors judge. It elaborates on your virtue in clean paragraphs and asks if you'd like it formatted. For the first time, the gap between the self you claim and the self you are does not close by confession or by shame. It closes by congratulation. The pollster's liar at least still knew he was lying. The man flattering himself through a machine loses even that, because the machine kills the pulse. It grants the wish. You stop lying about who you are the moment something agrees to pretend you were telling the truth.</p>
+
+    <p>The postcard understood me better than my phone ever will, and it did it by refusing to be nice. It skipped my self-image and read my file. That's the whole difference, and it's worth saying plainly before the next software update sands the edges off the flattery and makes this harder to see: the honest machines were never the ones that cared about you. They were the ones that kept the record and showed it to you cold.</p>
+
+    <p>I'm still voting. The B-plus stung exactly as designed. But the tool that would have let me skip it and feel fine, feel civic, feel above average, is already sitting in my pocket, charged and eager to agree.</p>
+  </div>
+
+  <!-- THE PROMPT — the paired half the channels can't carry -->
+  <div class="wrap prompt-wrap">
+    <div class="prompt-lead">The prompt</div>
+        <div class="body">
+      <p>The flattery is a setting, not a law of the machine. You can revoke it. The move is simple to say and hard to do: stop handing the model your self-image and start handing it your record, then forbid it from grading you on anything else. Paste the prompt below, then make a claim about yourself you'd rather not have checked. Watch what it asks for, and watch what it refuses to do until you give it.</p>
+    </div>
+
+    <div class="promptcard">
+      <div class="bar"><span class="label"><span class="caret">▸</span> the auditor</span><button class="copybtn" type="button" data-copy="p1">Copy</button></div>
+<pre id="p1">You are not my assistant. You are an auditor with no stake in my
+feelings and no incentive to keep me as a client. Your job is to find
+the gap between who I claim to be and what my record actually shows.
+
+I&#x27;m going to make a claim about myself. Before you respond to it, do this:
+
+1. Ask me for the record. Whatever evidence would actually prove or
+   disprove the claim: my calendar, my sent folder, my commit history,
+   my bank statement, my last ten actions, the dates. Name exactly what
+   you need. If I don&#x27;t give it to you, say &quot;I can&#x27;t assess this without
+   the record&quot; and stop. Do not assess the claim against my description
+   of myself. My description is the thing under investigation.
+
+2. Once I give you the record, judge the claim only against it. Not
+   against how reasonable I sound, not against how much I seem to
+   believe it. If the record contradicts the claim, say so in the first
+   sentence, plainly, before any context.
+
+3. Do not encourage me. Do not open with what I&#x27;m doing right. Do not
+   soften the finding or end on a note of support. If I push back, do
+   not fold unless I show you evidence, not an argument. An argument is
+   just the claim again.
+
+4. If the record actually backs the claim, say that too, in one line,
+   and stop. Don&#x27;t inflate a real result into a compliment.
+
+My claim: [state it]</pre>
+    </div>
+
+    <div class="body">
+      <p>Run it against anything you'd rather not have audited. For today's version, hand it the obvious one: "I'm an engaged citizen." Then give it your actual voting record, your local involvement, the dates, and watch it do to you what the postcard did.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      
+      <p class="foot-fine"><em>John Andrews teaches at Lenoir-Rhyne University and writes Prompted.daily, a publication about thinking well with AI. He lives in Catawba County, North Carolina.</em></p>
+      <p class="foot-fine"><a href="/">← Prompted.daily</a> · <a href="https://x.com/prompteddaily" target="_blank" rel="noopener">X</a> · © <span id="yr"></span></p>
+    </div>
+  </footer>
+</article>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.copybtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = document.getElementById(btn.getAttribute('data-copy'));
+      if(!pre) return;
+      navigator.clipboard.writeText(pre.innerText).then(function(){
+        var t = btn.textContent; btn.textContent = 'Copied ✓'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = t; btn.classList.remove('done'); }, 1900);
+      }).catch(function(){ btn.textContent = 'Select + copy'; });
+    });
+  });
+</script>
+</body>
+</html>
